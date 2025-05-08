@@ -2,7 +2,7 @@
   background-color: $footer_background_mobile;
   padding: pxToRem(44) pxToRem(32);
   text-align: left;
-  color: $footer_text;
+  color: $grey_300;
 
   &__section {
     &--about {
@@ -13,7 +13,7 @@
         margin-bottom: pxToRem(24);
         font-size: pxToRem(18);
         font-weight: 600;
-        color: $footer_heading;
+        color: $grey_100;
       }
 
       .footer__list {
@@ -23,7 +23,7 @@
         &-item {
           margin-bottom: pxToRem(10);
           a {
-            color: $footer_text;
+            color: $grey_300;
             font-size: pxToRem(14);
             font-weight: 500;
             text-decoration: none;
@@ -37,12 +37,12 @@
         margin-bottom: pxToRem(8);
         font-size: pxToRem(18);
         font-weight: 600;
-        color: $footer_heading;
+        color: $grey_100;
       }
       .footer__contact {
         p {
           margin-bottom: pxToRem(8);
-          color: $footer_text;
+          color: $grey_300;
           font-size: pxToRem(14);
           font-weight: 500;
         }
@@ -90,7 +90,7 @@
 
   // Desktop overrides
   @media (min-width: 992px) {
-    background-color: $footer_background_desktop;
+    background-color: $grey-800;
     display: flex;
     justify-content: space-between;
     padding: pxToRem(106) pxToRem(32);
@@ -99,7 +99,7 @@
       padding: 0 pxToRem(75);
       display: flex;
       font-size: pxToRem(14);
-      color: $footer_text;
+      color: $grey_300;
     }
 
     &__divider {
