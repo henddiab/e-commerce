@@ -1,0 +1,60 @@
+.navbar {
+  padding: pxToRem(20) pxToRem(28) pxToRem(20) pxToRem(14);
+  .navbar-toggler {
+    &:focus {
+      box-shadow: none !important;
+    }
+    .navbar-toggler-icon {
+      background-image: url("/assets/icons/burger\ icon.svg") !important;
+    }
+  }
+  .navbar-nav {
+    flex-direction: column;
+    .nav-item {
+      .btn {
+        padding: pxToRem(10);
+        font-size: pxToRem(14);
+        font-weight: 500;
+        border-radius: 0 !important;
+        &.login {
+          border: 1px solid $primary;
+          color: $primary;
+        }
+        &.signup {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+      .indicator {
+        position: absolute;
+        background-color: $cart_indicator;
+        width: 14px;
+        height: 14px;
+        color: $white;
+        font-size: 9px;
+        font-weight: 500;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    padding: pxToRem(30) pxToRem(38) pxToRem(30) pxToRem(14);
+    .navbar-collapse {
+      background-color: $white;
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+      gap: pxToRem(24);
+      .nav-item {
+        &:first-child {
+          margin-inline-end: pxToRem(56);
+        }
+      }
+    }
+  }
+}

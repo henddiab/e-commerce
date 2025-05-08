@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?30jt7s');
+  src:  url('fonts/icomoon.eot?30jt7s#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?30jt7s') format('truetype'),
+    url('fonts/icomoon.woff?30jt7s') format('woff'),
+    url('fonts/icomoon.svg?30jt7s#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-burger-icon:before {
+  content: "\e900";
+  color: #777e91;
+}
+.icon-facebook .path1:before {
+  content: "\e901";
+  color: rgb(8, 102, 255);
+}
+.icon-facebook .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-github:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-google .path1:before {
+  content: "\e904";
+  color: rgb(66, 133, 244);
+}
+.icon-google .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(52, 168, 83);
+}
+.icon-google .path3:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(251, 188, 5);
+}
+.icon-google .path4:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(234, 67, 53);
+}
+.icon-twitter:before {
+  content: "\e908";
+  color: #fff;
+}

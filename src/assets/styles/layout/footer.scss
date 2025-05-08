@@ -26,6 +26,7 @@
             color: $footer_text;
             font-size: pxToRem(14);
             font-weight: 500;
+            text-decoration: none;
           }
         }
       }
@@ -91,8 +92,8 @@
   @media (min-width: 992px) {
     background-color: $footer_background_desktop;
     display: flex;
-    justify-content: space-around;
-    padding: pxToRem(106) 0;
+    justify-content: space-between;
+    padding: pxToRem(106) pxToRem(32);
 
     &__description {
       padding: 0 pxToRem(75);
