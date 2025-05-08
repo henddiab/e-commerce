@@ -1,0 +1,13 @@
+@import "variables.scss";
+@import "colors.scss";
+@import "functions.scss";
+@import "layout/footer.scss";
+
+* {
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}

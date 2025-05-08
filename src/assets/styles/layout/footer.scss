@@ -1,0 +1,128 @@
+.footer {
+  background-color: $footer_background_mobile;
+  padding: pxToRem(44) pxToRem(32);
+  text-align: left;
+  color: $footer_text;
+
+  &__section {
+    &--about {
+      margin-bottom: pxToRem(64);
+    }
+    &--help {
+      .footer__heading {
+        margin-bottom: pxToRem(24);
+        font-size: pxToRem(18);
+        font-weight: 600;
+        color: $footer_heading;
+      }
+
+      .footer__list {
+        list-style: none;
+        padding: 0;
+
+        &-item {
+          margin-bottom: pxToRem(10);
+          a {
+            color: $footer_text;
+            font-size: pxToRem(14);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    &--contact {
+      .footer__heading {
+        margin-bottom: pxToRem(8);
+        font-size: pxToRem(18);
+        font-weight: 600;
+        color: $footer_heading;
+      }
+      .footer__contact {
+        p {
+          margin-bottom: pxToRem(8);
+          color: $footer_text;
+          font-size: pxToRem(14);
+          font-weight: 500;
+        }
+      }
+
+      .footer__socials {
+        display: flex;
+        justify-content: start;
+        gap: 1rem;
+        margin: pxToRem(24) 0;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          background-color: $white;
+          border-radius: 50%;
+          img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  &__description {
+    display: none;
+  }
+
+  &__divider {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: $footer_divider;
+    margin: pxToRem(28) 0;
+  }
+
+  &__copyright {
+    font-size: pxToRem(12);
+    color: $footer_copyright;
+  }
+
+  // Desktop overrides
+  @media (min-width: 992px) {
+    background-color: $footer_background_desktop;
+    display: flex;
+    justify-content: space-around;
+    padding: pxToRem(106) 0;
+
+    &__description {
+      padding: 0 pxToRem(75);
+      display: flex;
+      font-size: pxToRem(14);
+      color: $footer_text;
+    }
+
+    &__divider {
+      display: none;
+    }
+
+    &__section {
+      margin-bottom: 0;
+      &--copyright {
+        display: none;
+      }
+      &--about {
+        width: 50%;
+        display: flex;
+      }
+      &--help {
+        .footer__heading {
+          margin-bottom: pxToRem(8);
+        }
+      }
+    }
+
+    &__socials {
+      justify-content: flex-start;
+    }
+  }
+}
