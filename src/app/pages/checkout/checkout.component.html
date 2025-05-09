@@ -1,1 +1,85 @@
-<p>checkout works!</p>
+<div class="checkout">
+  <div class="checkout__header">
+    <h2 class="checkout__title">Checkout Page</h2>
+    <app-breadcrumb [items]="breadCrumbItems"></app-breadcrumb>
+  </div>
+
+  <div class="checkout__content">
+    <form
+      class="checkout__form"
+      [formGroup]="checkoutForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="checkout__form-group">
+        <div class="checkout__field">
+          <label for="country"
+            >Country <span class="checkout__required">*</span></label
+          >
+          <input
+            id="country"
+            formControlName="country"
+            placeholder="Enter Country"
+          />
+        </div>
+        <div class="checkout__field">
+          <label for="state"
+            >State/Union Territory
+            <span class="checkout__required">*</span></label
+          >
+          <input id="state" formControlName="state" placeholder="Enter State" />
+        </div>
+      </div>
+
+      <div class="checkout__section">
+        <h4 class="checkout__section-title">Payment Method</h4>
+        <div class="checkout__fields">
+          <!-- <div class="checkout__radio">
+            <div class="checkout__radio-label">
+              <input type="radio" checked />
+              <label> Credit/Debit Card </label>
+            </div>
+            <img src="assets/imgs/visa-mastercard.png" alt="Cards" />
+          </div> -->
+          <div class="checkout__radio">
+            <label class="checkout__radio-label">
+              <input type="radio" name="payment" checked />
+              <span class="checkout__radio-custom"></span>
+              <span class="checkout__radio-text">Credit/Debit Card</span>
+            </label>
+            <img src="assets/imgs/visa-mastercard.png" alt="Cards" />
+          </div>
+
+
+          <div class="checkout__field">
+            <label
+              >Name of Card <span class="checkout__required">*</span></label
+            >
+            <input formControlName="cardName" placeholder="Name of card" />
+          </div>
+          <div class="checkout__field">
+            <label>Card Number <span class="checkout__required">*</span></label>
+            <input formControlName="cardNumber" placeholder="Card Number" />
+          </div>
+
+          <div class="checkout__form-group">
+            <div class="checkout__field">
+              <label
+                >Expiry Date <span class="checkout__required">*</span></label
+              >
+              <input
+                formControlName="expiryDate"
+                placeholder="Enter Expiry Date"
+              />
+            </div>
+            <div class="checkout__field">
+              <label>CVC/CVV <span class="checkout__required">*</span></label>
+              <input formControlName="cvc" placeholder="Enter CVC/CVV" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+   <app-order-details></app-order-details>
+  </div>
+</div>
