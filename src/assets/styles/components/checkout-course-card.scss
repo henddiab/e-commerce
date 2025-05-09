@@ -1,5 +1,5 @@
 .total-courses{
- 
+
 }
 .course-cart{
  border: 1px solid $grey_border;
@@ -42,7 +42,7 @@
     font-size: pxToRem(18);
     margin-bottom: 0;
    }
-   span{
+   >span{
     font-size: pxToRem(14);
     color: $black;
     padding-inline-start: pxToRem(16);
@@ -59,6 +59,6 @@
     color: $error;
    }
   }
-   
+
  }
 }

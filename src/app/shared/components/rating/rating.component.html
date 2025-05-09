@@ -1,8 +1,8 @@
-<div class="star-rating">
- @for (star of stars; track $index) {
-  <i class="fa fa-star" ></i>
- }
- @if (rating % 1 !== 0) {
-  <i class="fa fa-star-half" ></i>
- }
+<div class="rating">
+  @for (star of fullStars; track star) {
+    <span class="pi pi-star-fill"></span>
+  }
+  @if (hasHalfStar) {
+    <span class="pi pi-star-half-fill"></span>
+  }
 </div>
