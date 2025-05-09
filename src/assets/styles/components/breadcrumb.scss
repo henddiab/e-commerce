@@ -1,0 +1,36 @@
+.breadcrumb-container {
+  .breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      &::after {
+        content: "›";
+        margin: 0 pxToRem(8);
+        color: $grey_border;
+      }
+      &:last-child::after {
+        content: "";
+      }
+      &::before{
+        content: '' ;
+      }
+      a {
+        color: $grey_900;
+        text-decoration: none;
+        font-size: pxToRem(14);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span {
+        color: $primary_600;
+        font-size: pxToRem(14);
+      }
+    }
+  }
+}
