@@ -1,6 +1,9 @@
-@import "variables.scss";
-@import "colors.scss";
-@import "functions.scss";
+@import "shared/variables.scss";
+@import "shared/font.scss";
+
+@import "shared/colors.scss";
+@import "shared/functions.scss";
+@import "icons/icons.scss";
 @import "layout/footer.scss";
 @import "layout/header.scss";
 @import "pages/course-details.scss";
@@ -10,6 +13,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: $regular;
+  font-weight: $font-weight-regular;
   text-decoration: none;
   list-style: none;
 }

@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?30jt7s');
-  src:  url('fonts/icomoon.eot?30jt7s#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?30jt7s') format('truetype'),
-    url('fonts/icomoon.woff?30jt7s') format('woff'),
-    url('fonts/icomoon.svg?30jt7s#icomoon') format('svg');
+  font-family: 'e-commerce';
+  src:  url('../../fonts/e-commerce.eot?kf582i');
+  src:  url('../../fonts/e-commerce.eot?kf582i#iefix') format('embedded-opentype'),
+    url('../../fonts/e-commerce.ttf?kf582i') format('truetype'),
+    url('../../fonts/e-commerce.woff?kf582i') format('woff'),
+    url('../../fonts/e-commerce.svg?kf582i#e-commerce') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'e-commerce' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,6 +25,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cart:before {
+  content: "\e909";
+}
+.icon-chevron-right-small:before {
+  content: "\e90a";
+}
+.icon-Star:before {
+  content: "\e90b";
+  color: #fec84b;
+}
+.icon-world:before {
+  content: "\e90c";
+}
 .icon-burger-icon:before {
   content: "\e900";
   color: #777e91;
