@@ -46,7 +46,7 @@
 
   &__meta {
     margin: pxToRem(24) 0;
-
+    display: flex;
     & .course-details__separator {
       margin: 0 pxToRem(8);
       color: $grey_700;

@@ -6,23 +6,22 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './rating.component.html',
-  styleUrls: ['./rating.component.scss']
+  styleUrls: ['./rating.component.scss'],
 })
 export class RatingComponent {
   @Input() rate: number = 0;
   readonly maxStars = 5;
+  readonly maxRate = 250;
+
+  get adjustedRate(): number {
+    return (this.rate / this.maxRate) * this.maxStars;
+  }
 
   get fullStars(): number[] {
-    return Array(Math.floor(this.rate)).fill(0);
+    return Array(Math.floor(this.adjustedRate));
   }
 
   get hasHalfStar(): boolean {
-    return this.rate % 1 >= 0.25 && this.rate % 1 < 0.75;
-  }
-
-  get emptyStars(): number[] {
-    const full = Math.floor(this.rate);
-    const half = this.hasHalfStar ? 1 : 0;
-    return Array(this.maxStars - full - half).fill(0);
+    return this.adjustedRate % 1 >= 0.5;
   }
 }

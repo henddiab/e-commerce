@@ -19,7 +19,7 @@
       </p>
 
       <div class="course-details__meta">
-        <span class="course-details__stars">★★★★★</span>
+        <app-rating [rate]="courseData.ratingCount"></app-rating>
         <span class="course-details__separator">|</span>
         <span class="course-details__stats"
           >{{courseData.hours}} Total Hours. {{courseData.lectures}} Lectures. {{courseData.level}}</span
