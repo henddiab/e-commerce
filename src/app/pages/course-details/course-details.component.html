@@ -3,26 +3,20 @@
   <div class="course-details__container">
     <!-- Left Content -->
     <div class="course-details__info">
-      <nav class="course-details__breadcrumb">
-        <a href="#" class="course-details__breadcrumb-link">Home</a> >
-        <a
-          href="#"
-          class="course-details__breadcrumb-link course-details__breadcrumb-link--active"
-          >Full Stack Web Development</a
-        >
-      </nav>
+      <app-breadcrumb [items]="breadCrumbItems"></app-breadcrumb>
 
-      <h1 class="course-details__title">{{courseData.title}}</h1>
+      <h1 class="course-details__title">{{ courseData.title }}</h1>
 
       <p class="course-details__description">
-       {{courseData.description}}
+        {{ courseData.description }}
       </p>
 
       <div class="course-details__meta">
         <app-rating [rate]="courseData.ratingCount"></app-rating>
         <span class="course-details__separator">|</span>
         <span class="course-details__stats"
-          >{{courseData.hours}} Total Hours. {{courseData.lectures}} Lectures. {{courseData.level}}</span
+          >{{ courseData.hours }} Total Hours.
+          {{ courseData.lectures }} Lectures. {{ courseData.level }}</span
         >
       </div>
 
@@ -33,7 +27,9 @@
           class="course-details__creator-img"
         />
         <span class="course-details__creator-name"> Created by </span>
-        <a href="#" class="course-details__creator-link">{{courseData.author}}</a>
+        <a href="#" class="course-details__creator-link">{{
+          courseData.author
+        }}</a>
       </div>
 
       <div class="course-details__languages">
@@ -52,9 +48,13 @@
         </div>
 
         <div class="course-details__price">
-          <span class="course-details__current-price">${{courseData.price - courseData.discount}}</span>
-          <span class="course-details__old-price">${{courseData.price}}</span>
-          <span class="course-details__discount">-${{courseData.discount}}</span>
+          <span class="course-details__current-price"
+            >${{ courseData.price - courseData.discount }}</span
+          >
+          <span class="course-details__old-price">${{ courseData.price }}</span>
+          <span class="course-details__discount"
+            >-${{ courseData.discount }}</span
+          >
         </div>
 
         <div class="course-details__buttons">

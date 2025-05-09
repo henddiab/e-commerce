@@ -28,6 +28,13 @@
     @media (min-width: 992px) {
       flex-direction: row;
       align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  &__details {
+    @media (min-width: 992px) {
+      width: pxToRem(400);
     }
   }
 
@@ -50,6 +57,10 @@
     &:first-child label {
       font-size: pxToRem(18) !important;
       font-weight: $font-weight-semiBold !important;
+    }
+
+    > div {
+      width: 100%;
     }
 
     @media (min-width: 992px) {
@@ -149,7 +160,7 @@
     color: $required;
   }
 
-  &__errorMsg{
+  &__errorMsg {
     color: $required;
     font-size: pxToRem(14);
     margin-bottom: pxToRem(8);

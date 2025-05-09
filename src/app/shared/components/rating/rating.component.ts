@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class RatingComponent {
   @Input() rate: number = 0;
   readonly maxStars = 5;
-  readonly maxRate = 250;
+  readonly maxRate = 200;
 
   get adjustedRate(): number {
     return (this.rate / this.maxRate) * this.maxStars;

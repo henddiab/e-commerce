@@ -8,7 +8,6 @@
     <form
       class="checkout__form"
       [formGroup]="checkoutForm"
-      (ngSubmit)="onSubmit()"
     >
       <div class="checkout__form-group">
         <div class="checkout__field">
@@ -94,6 +93,8 @@
       </div>
     </form>
 
-    <app-order-details></app-order-details>
+    <div class="checkout__details">
+      <app-order-details [onCheckout]="proceedToCheckout"></app-order-details>
+    </div>
   </div>
 </div>

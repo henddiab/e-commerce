@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OrderDetailsComponent } from '../../shared/components/order-details/order-details.component';
 import { CheckoutCourseCardComponent } from '../../shared/components/checkout-course-card/checkout-course-card.component';
 import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
+import { BreadcrumbItem } from '../../shared/models/breadcrumb.interface';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -13,4 +14,9 @@ import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcru
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.scss',
 })
-export class ShoppingCartComponent {}
+export class ShoppingCartComponent {
+  breadCrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Shopping cart' },
+  ];
+}
