@@ -33,13 +33,6 @@
       <div class="checkout__section">
         <h4 class="checkout__section-title">Payment Method</h4>
         <div class="checkout__fields">
-          <!-- <div class="checkout__radio">
-            <div class="checkout__radio-label">
-              <input type="radio" checked />
-              <label> Credit/Debit Card </label>
-            </div>
-            <img src="assets/imgs/visa-mastercard.png" alt="Cards" />
-          </div> -->
           <div class="checkout__radio">
             <label class="checkout__radio-label">
               <input type="radio" name="payment" checked />
@@ -49,16 +42,26 @@
             <img src="assets/imgs/visa-mastercard.png" alt="Cards" />
           </div>
 
-
           <div class="checkout__field">
             <label
               >Name of Card <span class="checkout__required">*</span></label
             >
             <input formControlName="cardName" placeholder="Name of card" />
+
+            @if(checkoutForm.get('cardName')?.invalid &&
+            checkoutForm.get('cardName')?.touched){
+            <div class="checkout__errorMsg">
+              Invalid name (letters and spaces only)
+            </div>
+            }
           </div>
           <div class="checkout__field">
             <label>Card Number <span class="checkout__required">*</span></label>
             <input formControlName="cardNumber" placeholder="Card Number" />
+            @if(checkoutForm.get('cardNumber')?.invalid &&
+            checkoutForm.get('cardNumber')?.touched){
+            <div class="checkout__errorMsg">Card number must be 16 digits</div>
+            }
           </div>
 
           <div class="checkout__form-group">
@@ -70,16 +73,27 @@
                 formControlName="expiryDate"
                 placeholder="Enter Expiry Date"
               />
+
+              @if(checkoutForm.get('expiryDate')?.invalid &&
+              checkoutForm.get('expiryDate')?.touched){
+              <div class="checkout__errorMsg">
+                Format must be MM/YY or MM/YYYY
+              </div>
+              }
             </div>
             <div class="checkout__field">
               <label>CVC/CVV <span class="checkout__required">*</span></label>
               <input formControlName="cvc" placeholder="Enter CVC/CVV" />
+              @if(checkoutForm.get('cvc')?.invalid &&
+              checkoutForm.get('cvc')?.touched){
+              <div class="checkout__errorMsg">Must be 3 or 4 digits</div>
+              }
             </div>
           </div>
         </div>
       </div>
     </form>
 
-   <app-order-details></app-order-details>
+    <app-order-details></app-order-details>
   </div>
 </div>

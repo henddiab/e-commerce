@@ -25,10 +25,10 @@ export class CheckoutComponent {
     this.checkoutForm = this.fb.group({
       country: ['', Validators.required],
       state: ['', Validators.required],
-      cardName: ['', Validators.required],
+      cardName: ['', [Validators.required, Validators.pattern(/^[A-Za-z\s]{2,50}$/)]],
       cardNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/)]],
-      expiryDate: ['', Validators.required],
-      cvc: ['', [Validators.required, Validators.pattern(/^\d{3,4}$/)]],
+      expiryDate: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{2}|[0-9]{4})$/)]],
+      cvc: ['', [Validators.required, Validators.pattern(/^\d{3,4}$/)]]
     });
   }
 
