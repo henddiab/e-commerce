@@ -1,4 +1,5 @@
 <div class="course-details">
+  @if (courseData) {
   <div class="course-details__container">
     <!-- Left Content -->
     <div class="course-details__info">
@@ -11,33 +12,28 @@
         >
       </nav>
 
-      <h1 class="course-details__title">Full Stack Web Development</h1>
+      <h1 class="course-details__title">{{courseData.title}}</h1>
 
       <p class="course-details__description">
-        Learn to build dynamic web applications from the ground up. This course
-        covers HTML, CSS, JavaScript, and backend technologies like Node.js and
-        Express. You'll also explore databases with MongoDB and gain experience
-        in deploying applications.
+       {{courseData.description}}
       </p>
 
       <div class="course-details__meta">
         <span class="course-details__stars">★★★★★</span>
         <span class="course-details__separator">|</span>
         <span class="course-details__stats"
-          >22 Total Hours. 155 Lectures. Beginner</span
+          >{{courseData.hours}} Total Hours. {{courseData.lectures}} Lectures. {{courseData.level}}</span
         >
       </div>
 
       <div class="course-details__creator">
         <img
-          src="assets/images/creator.jpg"
+          [src]="courseData.image"
           alt="Jane Doe"
           class="course-details__creator-img"
         />
-        <span class="course-details__creator-name">
-          Created by
-        </span>
-        <a href="#" class="course-details__creator-link">Jane Doe</a>
+        <span class="course-details__creator-name"> Created by </span>
+        <a href="#" class="course-details__creator-link">{{courseData.author}}</a>
       </div>
 
       <div class="course-details__languages">
@@ -56,9 +52,9 @@
         </div>
 
         <div class="course-details__price">
-          <span class="course-details__current-price">$199.9</span>
-          <span class="course-details__old-price">$209.9</span>
-          <span class="course-details__discount">-$10</span>
+          <span class="course-details__current-price">${{courseData.price - courseData.discount}}</span>
+          <span class="course-details__old-price">${{courseData.price}}</span>
+          <span class="course-details__discount">-${{courseData.discount}}</span>
         </div>
 
         <div class="course-details__buttons">
@@ -85,4 +81,5 @@
       </div>
     </div>
   </div>
+  }
 </div>

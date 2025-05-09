@@ -13,7 +13,7 @@
 
   &__info {
     @media (min-width: 992px) {
-      width: 55%;
+      width: pxToRem(778);
     }
     background-color: $grey_background;
     padding: pxToRem(20);
@@ -92,7 +92,7 @@
 
   &__sidebar {
     @media (min-width: 992px) {
-      width: 35%;
+      width: pxToRem(400);
     }
     border: 1px solid $grey_border;
     border-radius: pxToRem(16);
