@@ -1,0 +1,8 @@
+<div class="star-rating">
+ @for (star of stars; track $index) {
+  <i class="fa fa-star" ></i>
+ }
+ @if (rating % 1 !== 0) {
+  <i class="fa fa-star-half" ></i>
+ }
+</div>

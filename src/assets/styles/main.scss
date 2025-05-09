@@ -1,15 +1,26 @@
 @import "shared/variables.scss";
-@import "shared/font.scss";
-
 @import "shared/colors.scss";
+@import "shared/font.scss";
 @import "shared/functions.scss";
 @import "shared/extends.scss";
+@import "shared/buttons.scss";
+@import "shared/common.scss";
+
+
 @import "icons/icons.scss";
+
+
 @import "layout/footer.scss";
 @import "layout/header.scss";
+
+
 @import "pages/course-details.scss";
-@import "components/breadcrumb.scss";
 @import "pages/checkout.scss";
+@import "pages/shopping-cart.scss";
+
+@import "components/breadcrumb.scss";
+@import "components/order-details.scss";
+@import "components/checkout-course-card.scss";
 
 * {
   font-size: 16px;

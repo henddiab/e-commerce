@@ -1,0 +1,18 @@
+.primary-btn {
+ width: 100%;
+ padding: pxToRem(14);
+ font-size: pxToRem(14);
+ font-weight: 500;
+ margin-bottom: pxToRem(16);
+ border-radius: 8px;
+ cursor: pointer;
+ border: none;
+ background-color: $primary;
+ color: $white;
+}
+
+.secondary-btn {
+ background-color: $white;
+ border: 1px solid $primary;
+ color: $primary;
+}

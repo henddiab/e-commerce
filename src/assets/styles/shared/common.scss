@@ -1,0 +1,7 @@
+.divider {
+ display: inline-block;
+ height: 1px;
+ width: 100%;
+ background-color: $grey_border;
+ margin: pxToRem(12) 0;
+}
