@@ -148,4 +148,10 @@
   &__required {
     color: $required;
   }
+
+  &__errorMsg{
+    color: $required;
+    font-size: pxToRem(14);
+    margin-bottom: pxToRem(8);
+  }
 }
