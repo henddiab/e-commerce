@@ -3,10 +3,11 @@ import { CourseData } from '../../shared/models/courseData.interface';
 import { RatingComponent } from '../../shared/components/rating/rating.component';
 import { CategoriesService } from '../../core/services/categories/categories.service';
 import { Category } from '../../shared/models/category.interface';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-course-card',
-  imports: [RatingComponent],
+  imports: [RatingComponent,RouterModule],
   templateUrl: './home-course-card.component.html',
   styleUrl: './home-course-card.component.scss',
 })
@@ -25,10 +26,5 @@ export class HomeCourseCardComponent {
       (category: Category) => category.id === categoryId.toString()
     );
     return category ? category.name : '';
-  }
-
-  addToCart(course: CourseData) {
-    console.log('Course added to cart:', course);
-
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -9,6 +9,7 @@ import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcru
 import { OrderDetailsComponent } from '../../shared/components/order-details/order-details.component';
 import { BreadcrumbItem } from '../../shared/models/breadcrumb.interface';
 import { RouterModule } from '@angular/router';
+import { CoursesService } from '../../core/services/courses/courses.service';
 @Component({
   selector: 'app-checkout',
   imports: [
@@ -21,6 +22,16 @@ import { RouterModule } from '@angular/router';
   styleUrl: './checkout.component.scss',
 })
 export class CheckoutComponent {
+  /**
+   * The total price of the items in the shopping cart.
+   */
+  totalPrice: number = 0;
+
+  /**
+   * The total discounts of items in cart.
+   */
+
+  totalDiscount: number = 0;
   /**
    * Breadcrumb items for navigation display.
    */
@@ -44,7 +55,10 @@ export class CheckoutComponent {
    * Constructor to initialize the form group with validation rules.
    * @param fb - FormBuilder instance for creating the reactive form.
    */
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private coursesService: CoursesService) {
+    this.totalDiscount = this.coursesService.totalDiscount;
+    this.totalPrice = this.coursesService.totalPrice;
+
     this.checkoutForm = this.fb.group({
       country: ['', Validators.required],
       state: ['', Validators.required],

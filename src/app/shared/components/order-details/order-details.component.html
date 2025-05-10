@@ -1,31 +1,29 @@
 <div class="order-details">
+  <h4 class="order-details__title">Order Details</h4>
 
- <h4 class="order-details__title">
-  Order Details
- </h4>
+  <div class="order-details__card">
+    <div class="order-details__card-item">
+      <span class="order-details__card-item-title">Price</span>
+      <span class="order-details__card-item-price">${{ totalPrice }}</span>
+    </div>
+    <div class="order-details__card-item">
+      <span class="order-details__card-item-title">Discount</span>
+      <span class="order-details__card-item-price">-${{ totalDiscount }}</span>
+    </div>
+    <div class="order-details__card-item">
+      <span class="order-details__card-item-title">Tax</span>
+      <span class="order-details__card-item-price">${{ tax }}</span>
+    </div>
+    <div class="divider"></div>
+    <div class="order-details__card-total">
+      <span class="order-details__card-total-title">Total</span>
+      <span class="order-details__card-total-price"
+        >${{ totalDiscount + totalPrice + tax }}</span
+      >
+    </div>
+  </div>
 
- <div class="order-details__card">
-  <div class="order-details__card-item">
-   <span class="order-details__card-item-title">Price</span>
-   <span class="order-details__card-item-price">$667</span>
-  </div>
-  <div class="order-details__card-item">
-   <span class="order-details__card-item-title">Discount</span>
-   <span class="order-details__card-item-price">-$667</span>
-  </div>
-  <div class="order-details__card-item">
-   <span class="order-details__card-item-title">$20.00</span>
-   <span class="order-details__card-item-price">$667</span>
-  </div>
-  <div class="divider">
-  </div>
-  <div class="order-details__card-total">
-   <span class="order-details__card-total-title">Total</span>
-   <span class="order-details__card-total-price">$667</span>
-  </div>
- </div>
-
- <button class="primary-btn" (click)="onCheckout()">
-  Proceed to Checkout
- </button>
+  <button class="primary-btn" (click)="onCheckout()">
+    Proceed to Checkout
+  </button>
 </div>

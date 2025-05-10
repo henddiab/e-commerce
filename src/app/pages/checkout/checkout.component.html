@@ -110,7 +110,11 @@
     <!-- orders details -->
     @if (!showConfirmation) {
     <div class="checkout__details">
-      <app-order-details [onCheckout]="proceedToCheckout"></app-order-details>
+      <app-order-details
+        [onCheckout]="proceedToCheckout"
+        [totalDiscount]="totalDiscount"
+        [totalPrice]="totalPrice"
+      ></app-order-details>
     </div>
 
     }

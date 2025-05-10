@@ -1,15 +1,22 @@
 <div class="shopping-cart__container">
- <div class="shopping-cart__container-main">
-  <app-breadcrumb [items]="breadCrumbItems"></app-breadcrumb>
-  <div class="shopping-cart__container-title">
-   <h2>
-    Shopping Cart
-   </h2>
+  <div class="shopping-cart__container-main">
+    <app-breadcrumb [items]="breadCrumbItems"></app-breadcrumb>
+    <div class="shopping-cart__container-title">
+      <h2>Shopping Cart</h2>
+    </div>
+    <div class="divider"></div>
+    <div class="shopping-cart__container-total">
+      <p>{{ coursesAddedToCart.length }} course(s) in cart</p>
+    </div>
+    @for (course of coursesAddedToCart; track course.id) {
+    <app-checkout-course-card [course]="course"></app-checkout-course-card>
+    }
   </div>
-  <div class="divider"></div>
-  <app-checkout-course-card></app-checkout-course-card>
- </div>
- <div class="shopping-cart__container-sidebar">
-  <app-order-details></app-order-details>
- </div>
+  <div class="shopping-cart__container-sidebar">
+    <app-order-details
+      [totalDiscount]="totalDiscount"
+      [totalPrice]="totalPrice"
+      [onCheckout]="onCheckout"
+    ></app-order-details>
+  </div>
 </div>

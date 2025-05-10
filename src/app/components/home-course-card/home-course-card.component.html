@@ -7,10 +7,7 @@
       <span class="course-card__image-discount">~${{ course?.discount }}</span>
 
       }
-      <button
-        class="course-card__image-cart"
-        (click)="course && addToCart(course)"
-      >
+      <button class="course-card__image-cart">
         <img src="assets/images/cart.svg" />
       </button>
     </div>
@@ -22,7 +19,12 @@
         getCategoryName(course?.categoryID ?? 0)
       }}</span>
     </div>
-    <h3 class="course-card__content-title">{{ course?.title }}</h3>
+    <h3
+      class="course-card__content-title"
+      [routerLink]="['/course-details', course?.id]"
+    >
+      {{ course?.title }}
+    </h3>
     <p class="course-card__content-author">By {{ course?.author }}</p>
     <div class="course-card__content-ratings">
       <app-rating [rate]="course?.ratingCount ?? 0"></app-rating>

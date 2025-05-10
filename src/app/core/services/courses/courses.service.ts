@@ -24,6 +24,31 @@ export class CoursesService {
   );
 
   /**
+   * The list of courses that have been added to the shopping cart.
+   * This is derived from the courses service by filtering for courses with `addToCart` set to true.
+   */
+  coursesAddedToCart: CourseData[] = this.courses().filter(
+    (course) => course.addToCart
+  );
+
+  /**
+   * The total price of the items in the shopping cart.
+   */
+  totalPrice: number = this.coursesAddedToCart.reduce(
+    (acc, course: CourseData) => acc + (course.price - course.discount),
+    0
+  );
+
+  /**
+   * The total discounts of items in cart.
+   */
+
+  totalDiscount: number = this.coursesAddedToCart.reduce(
+    (acc, course: CourseData) => acc + course.discount,
+    0
+  );
+
+  /**
    * Retrieves a course by its ID.
    * @param id - The unique identifier of the course.
    * @returns The course data if found, otherwise `undefined`.
