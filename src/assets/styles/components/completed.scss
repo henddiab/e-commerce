@@ -1,0 +1,21 @@
+.order-complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  padding: pxToRem(96) 0;
+
+  &__title {
+    font-size: pxToRem(40);
+    font-weight: $font-weight-semiBold;
+    color: $grey-900;
+    margin: 1rem 0;
+  }
+
+  &__message {
+    font-weight: $font-weight-semiBold;
+    font-size: pxToRem(24);
+    color: $grey-900;
+  }
+}

@@ -8,9 +8,11 @@ import {
 import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
 import { OrderDetailsComponent } from '../../shared/components/order-details/order-details.component';
 import { BreadcrumbItem } from '../../shared/models/breadcrumb.interface';
+import { RouterModule } from '@angular/router';
+import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-checkout',
-  imports: [ReactiveFormsModule, BreadcrumbComponent, OrderDetailsComponent],
+  imports: [ReactiveFormsModule, BreadcrumbComponent, OrderDetailsComponent,RouterModule,NgClass],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss',
 })
@@ -21,6 +23,7 @@ export class CheckoutComponent {
     { label: 'Checkout' },
   ];
   checkoutForm: FormGroup;
+  showConfirmation: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.checkoutForm = this.fb.group({
@@ -42,11 +45,16 @@ export class CheckoutComponent {
     });
   }
 
+  backToForm(){
+    this.showConfirmation = false;
+  }
+
   proceedToCheckout = () => {
-    if (this.checkoutForm.valid) {
-      console.log(this.checkoutForm.value);
-    } else {
-      this.checkoutForm.markAllAsTouched();
-    }
+    this.showConfirmation = true;
+    // if (this.checkoutForm.valid) {
+    //   console.log(this.checkoutForm.value);
+    // } else {
+    //   this.checkoutForm.markAllAsTouched();
+    // }
   };
 }

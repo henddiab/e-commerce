@@ -1,100 +1,162 @@
 <div class="checkout">
-  <div class="checkout__header">
-    <h2 class="checkout__title">Checkout Page</h2>
-    <app-breadcrumb [items]="breadCrumbItems"></app-breadcrumb>
-  </div>
-
   <div class="checkout__content">
-    <form
-      class="checkout__form"
-      [formGroup]="checkoutForm"
-    >
-      <div class="checkout__form-group">
-        <div class="checkout__field">
-          <label for="country"
-            >Country <span class="checkout__required">*</span></label
-          >
-          <input
-            id="country"
-            formControlName="country"
-            placeholder="Enter Country"
-          />
-        </div>
-        <div class="checkout__field">
-          <label for="state"
-            >State/Union Territory
-            <span class="checkout__required">*</span></label
-          >
-          <input id="state" formControlName="state" placeholder="Enter State" />
-        </div>
+    <!-- checkout form -->
+
+    @if (!showConfirmation) {
+    <div class="checkout__content-form">
+      <div class="checkout__header">
+        <h2 class="checkout__title">Checkout Page</h2>
+        <app-breadcrumb [items]="breadCrumbItems"></app-breadcrumb>
       </div>
 
-      <div class="checkout__section">
-        <h4 class="checkout__section-title">Payment Method</h4>
-        <div class="checkout__fields">
-          <div class="checkout__radio">
-            <label class="checkout__radio-label">
-              <input type="radio" name="payment" checked />
-              <span class="checkout__radio-custom"></span>
-              <span class="checkout__radio-text">Credit/Debit Card</span>
-            </label>
-            <img src="assets/imgs/visa-mastercard.png" alt="Cards" />
-          </div>
-
+      <form class="checkout__form" [formGroup]="checkoutForm">
+        <div class="checkout__form-group">
           <div class="checkout__field">
-            <label
-              >Name of Card <span class="checkout__required">*</span></label
+            <label for="country"
+              >Country <span class="checkout__required">*</span></label
             >
-            <input formControlName="cardName" placeholder="Name of card" />
-
-            @if(checkoutForm.get('cardName')?.invalid &&
-            checkoutForm.get('cardName')?.touched){
-            <div class="checkout__errorMsg">
-              Invalid name (letters and spaces only)
-            </div>
-            }
+            <input
+              id="country"
+              formControlName="country"
+              placeholder="Enter Country"
+            />
           </div>
           <div class="checkout__field">
-            <label>Card Number <span class="checkout__required">*</span></label>
-            <input formControlName="cardNumber" placeholder="Card Number" />
-            @if(checkoutForm.get('cardNumber')?.invalid &&
-            checkoutForm.get('cardNumber')?.touched){
-            <div class="checkout__errorMsg">Card number must be 16 digits</div>
-            }
+            <label for="state"
+              >State/Union Territory
+              <span class="checkout__required">*</span></label
+            >
+            <input
+              id="state"
+              formControlName="state"
+              placeholder="Enter State"
+            />
           </div>
+        </div>
 
-          <div class="checkout__form-group">
+        <div class="checkout__section">
+          <h4 class="checkout__section-title">Payment Method</h4>
+          <div class="checkout__fields">
+            <div class="checkout__radio">
+              <label class="checkout__radio-label">
+                <input type="radio" name="payment" checked />
+                <span class="checkout__radio-custom"></span>
+                <span class="checkout__radio-text">Credit/Debit Card</span>
+              </label>
+              <img src="assets/imgs/visa-mastercard.png" alt="Cards" />
+            </div>
+
             <div class="checkout__field">
               <label
-                >Expiry Date <span class="checkout__required">*</span></label
+                >Name of Card <span class="checkout__required">*</span></label
               >
-              <input
-                formControlName="expiryDate"
-                placeholder="Enter Expiry Date"
-              />
+              <input formControlName="cardName" placeholder="Name of card" />
 
-              @if(checkoutForm.get('expiryDate')?.invalid &&
-              checkoutForm.get('expiryDate')?.touched){
+              @if(checkoutForm.get('cardName')?.invalid &&
+              checkoutForm.get('cardName')?.touched){
               <div class="checkout__errorMsg">
-                Format must be MM/YY or MM/YYYY
+                Invalid name (letters and spaces only)
               </div>
               }
             </div>
             <div class="checkout__field">
-              <label>CVC/CVV <span class="checkout__required">*</span></label>
-              <input formControlName="cvc" placeholder="Enter CVC/CVV" />
-              @if(checkoutForm.get('cvc')?.invalid &&
-              checkoutForm.get('cvc')?.touched){
-              <div class="checkout__errorMsg">Must be 3 or 4 digits</div>
+              <label
+                >Card Number <span class="checkout__required">*</span></label
+              >
+              <input formControlName="cardNumber" placeholder="Card Number" />
+              @if(checkoutForm.get('cardNumber')?.invalid &&
+              checkoutForm.get('cardNumber')?.touched){
+              <div class="checkout__errorMsg">
+                Card number must be 16 digits
+              </div>
               }
+            </div>
+
+            <div class="checkout__form-group">
+              <div class="checkout__field">
+                <label
+                  >Expiry Date <span class="checkout__required">*</span></label
+                >
+                <input
+                  formControlName="expiryDate"
+                  placeholder="Enter Expiry Date"
+                />
+
+                @if(checkoutForm.get('expiryDate')?.invalid &&
+                checkoutForm.get('expiryDate')?.touched){
+                <div class="checkout__errorMsg">
+                  Format must be MM/YY or MM/YYYY
+                </div>
+                }
+              </div>
+              <div class="checkout__field">
+                <label>CVC/CVV <span class="checkout__required">*</span></label>
+                <input formControlName="cvc" placeholder="Enter CVC/CVV" />
+                @if(checkoutForm.get('cvc')?.invalid &&
+                checkoutForm.get('cvc')?.touched){
+                <div class="checkout__errorMsg">Must be 3 or 4 digits</div>
+                }
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
+    }
 
+    <!-- orders details -->
+    @if (!showConfirmation) {
     <div class="checkout__details">
       <app-order-details [onCheckout]="proceedToCheckout"></app-order-details>
     </div>
+
+    }
+    <!-- form data display -->
+    @if (showConfirmation) {
+    <ng-container>
+      <div class="checkout__formData">
+        <div class="checkout__fields">
+          <div class="checkout__field">
+            <label>Country</label>
+            <p>{{ checkoutForm.get("country")?.value }}</p>
+          </div>
+          <div class="checkout__field">
+            <label>State</label>
+            <p>{{ checkoutForm.get("state")?.value }}</p>
+          </div>
+          <div class="checkout__field">
+            <label>Name of Card</label>
+            <p>{{ checkoutForm.get("cardName")?.value }}</p>
+          </div>
+          <div class="checkout__field">
+            <label>Card Number</label>
+            <p>{{ checkoutForm.get("cardNumber")?.value }}</p>
+          </div>
+          <div class="checkout__field">
+            <label>Expiry Date</label>
+            <p>{{ checkoutForm.get("expiryDate")?.value }}</p>
+          </div>
+          <div class="checkout__field">
+            <label>CVC/CVV</label>
+            <p>{{ checkoutForm.get("cvc")?.value }}</p>
+          </div>
+        </div>
+
+        <div class="checkout__formData-buttons">
+          <button type="button" class="primary-btn" (click)="backToForm()">
+            Back
+          </button>
+          <button
+            type="button"
+            [routerLink]="['/completed']"
+            routerLinkActive="router-link-active"
+            class="primary-btn mr-5"
+          >
+            Complete Order
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    }
   </div>
 </div>

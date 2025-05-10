@@ -38,6 +38,20 @@
     }
   }
 
+  &__formData {
+    width: 100%;
+    &-buttons {
+      display: flex;
+      margin-top: 1rem;
+      button:first-child {
+        background-color: $white;
+        border: 1px solid $primary;
+        color: $primary;
+        margin-inline-end: 1rem;
+      }
+    }
+  }
+
   &__form {
     background: $white;
     border-radius: 16px;
