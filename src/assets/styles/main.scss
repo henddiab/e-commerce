@@ -17,12 +17,15 @@
 @import "pages/course-details.scss";
 @import "pages/checkout.scss";
 @import "pages/shopping-cart.scss";
+@import "pages/home.scss";
 
 @import "components/breadcrumb.scss";
 @import "components/order-details.scss";
 @import "components/checkout-course-card.scss";
 @import "components/rating.scss";
 @import "components/completed.scss";
+@import "components/home-course-card.scss";
+@import "components/all-courses.scss";
 
 * {
   font-size: 16px;

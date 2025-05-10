@@ -1,0 +1,9 @@
+.homepage__container {
+  padding: pxToRem(16) pxToRem(20) pxToRem(40);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-courses{
+    width: 100%;
+  }
+}

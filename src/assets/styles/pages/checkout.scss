@@ -14,9 +14,7 @@
   }
 
   &__title {
-    font-size: pxToRem(24);
-    color: $grey-900;
-    font-weight: $font-weight-semiBold;
+    @extend %header-medium;
     margin: 0;
   }
 

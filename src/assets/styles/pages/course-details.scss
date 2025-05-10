@@ -77,16 +77,12 @@
     }
 
     &-name {
-      font-size: pxToRem(14);
-      color: $grey_700;
-      font-weight: $font-weight-regular;
+      @extend %header-regular;
     }
   }
 
   &__languages {
-    font-size: pxToRem(14);
-    font-weight: 400;
-    color: $grey_700;
+    @extend %header-regular;
   }
 
   &__sidebar {
@@ -111,8 +107,7 @@
     font-weight: $font-weight-semiBold;
 
     & .course-details__current-price {
-      color: $grey-900;
-      font-size: pxToRem(24);
+      @extend %header-medium;
     }
 
     & .course-details__old-price {

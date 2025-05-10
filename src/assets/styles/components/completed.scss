@@ -12,8 +12,6 @@
   }
 
   &__message {
-    font-weight: $font-weight-semiBold;
-    font-size: pxToRem(24);
-    color: $grey-900;
+    @extend %header-medium;
   }
 }

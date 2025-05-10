@@ -8,3 +8,15 @@
   font-weight: $font-weight-bold;
   color: $grey-900;
 }
+
+%header-medium {
+  font-size: pxToRem(24);
+  font-weight: $font-weight-semiBold;
+  color: $grey-900;
+}
+
+%header-regular {
+  font-size: pxToRem(14);
+  color: $grey_700;
+  font-weight: $font-weight-regular;
+}

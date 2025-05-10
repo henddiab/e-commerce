@@ -1,0 +1,40 @@
+<div class="course-card">
+  <div class="course-card__image">
+    <img [src]="course?.image" />
+
+    <div class="course-card__image-overlay">
+      @if (course?.discount) {
+      <span class="course-card__image-discount">~${{ course?.discount }}</span>
+
+      }
+      <button
+        class="course-card__image-cart"
+        (click)="course && addToCart(course)"
+      >
+        <img src="assets/images/cart.svg" />
+      </button>
+    </div>
+  </div>
+  <div class="course-card__content">
+    <div class="course-card__content-price">
+      <span class="course-card__content-amount">${{ course?.price }}</span>
+      <span class="course-card__content-category">{{
+        getCategoryName(course?.categoryID ?? 0)
+      }}</span>
+    </div>
+    <h3 class="course-card__content-title">{{ course?.title }}</h3>
+    <p class="course-card__content-author">By {{ course?.author }}</p>
+    <div class="course-card__content-ratings">
+      <app-rating [rate]="course?.ratingCount ?? 0"></app-rating>
+      <span class="course-card__rating-count"
+        >({{ course?.ratingCount }} Ratings)</span
+      >
+    </div>
+    <div class="course-card__content-details">
+      <p class="course-card__duration">
+        {{ course?.hours }} Total Hours. {{ course?.lectures }} Lectures.
+        {{ course?.level }}
+      </p>
+    </div>
+  </div>
+</div>

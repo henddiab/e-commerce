@@ -1,5 +1,6 @@
 .navbar {
   padding: pxToRem(20) pxToRem(28) pxToRem(20) pxToRem(14);
+  z-index: 9999;
   .navbar-toggler {
     &:focus {
       box-shadow: none !important;

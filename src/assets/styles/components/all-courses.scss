@@ -1,0 +1,50 @@
+.courses__container {
+  width: 100%;
+  text-align: center;
+  &-content {
+    display: flex;
+    justify-content: center;
+    padding: pxToRem(40) pxToRem(20);
+    p-tabpanels {
+      padding: 0;
+    }
+
+    p-tablist {
+      margin-bottom: pxToRem(40);
+      .p-tablist-tab-list {
+        justify-content: center;
+        border: none;
+        .p-tab {
+          background: $tab_background;
+          border: none;
+          border-radius: 8px;
+          margin-inline-end: pxToRem(28);
+          color: $white;
+          width: pxToRem(157);
+          justify-content: center;
+          font-weight: $font-weight-medium;
+          font-size: 1rem;
+        }
+        .p-tab-active {
+          background: $primary;
+          border: none;
+        }
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      display: unset;
+    }
+  }
+
+  &-title {
+    @extend %header-medium;
+    padding: pxToRem(30) 0;
+  }
+  p-tablist {
+    display: none;
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
+  }
+}
