@@ -1,18 +1,20 @@
+@import "variables";
+
 @font-face {
-  font-family: 'e-commerce';
-  src:  url('/assets/fonts/e-commerce.eot?kf582i');
-  src:  url('/assets/fonts/e-commerce.eot?kf582i#iefix') format('embedded-opentype'),
-    url('/assets/fonts/e-commerce.ttf?kf582i') format('truetype'),
-    url('/assets/fonts/e-commerce.woff?kf582i') format('woff'),
-    url('/assets/fonts/e-commerce.svg?kf582i#e-commerce') format('svg');
+  font-family: '#{$icomoon-font-family}';
+  src:  url('/assets/#{$icomoon-font-path}/#{$icomoon-font-family}.eot?baooae');
+  src:  url('/assets/#{$icomoon-font-path}/#{$icomoon-font-family}.eot?baooae#iefix') format('embedded-opentype'),
+    url('/assets/#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?baooae') format('truetype'),
+    url('/assets/#{$icomoon-font-path}/#{$icomoon-font-family}.woff?baooae') format('woff'),
+    url('/assets/#{$icomoon-font-path}/#{$icomoon-font-family}.svg?baooae##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-i {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'e-commerce' !important;
+  font-family: '#{$icomoon-font-family}' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,56 +27,112 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-cart:before {
-  content: "\e909";
+.icon-brand_logo_network_social_windows_icon .path1 {
+  &:before {
+    content: $icon-brand_logo_network_social_windows_icon-path1;  
+    color: rgb(253, 90, 90);
+  }
 }
-.icon-chevron-right-small:before {
-  content: "\e90a";
+.icon-brand_logo_network_social_windows_icon .path2 {
+  &:before {
+    content: $icon-brand_logo_network_social_windows_icon-path2;  
+    margin-left: -1em;  
+    color: rgb(80, 204, 211);
+  }
 }
-.icon-Star:before {
-  content: "\e90b";
-  color: #fec84b;
+.icon-brand_logo_network_social_windows_icon .path3 {
+  &:before {
+    content: $icon-brand_logo_network_social_windows_icon-path3;  
+    margin-left: -1em;  
+    color: rgb(252, 194, 76);
+  }
 }
-.icon-world:before {
-  content: "\e90c";
+.icon-brand_logo_network_social_windows_icon .path4 {
+  &:before {
+    content: $icon-brand_logo_network_social_windows_icon-path4;  
+    margin-left: -1em;  
+    color: rgb(193, 219, 102);
+  }
 }
-.icon-burger-icon:before {
-  content: "\e900";
-  color: #777e91;
+.icon-cart_outline_icon {
+  &:before {
+    content: $icon-cart_outline_icon; 
+  }
 }
-.icon-facebook .path1:before {
-  content: "\e901";
-  color: rgb(8, 102, 255);
+.icon-logo_google_g_icon .path1 {
+  &:before {
+    content: $icon-logo_google_g_icon-path1;  
+    color: rgb(66, 128, 239);
+  }
 }
-.icon-facebook .path2:before {
-  content: "\e902";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
+.icon-logo_google_g_icon .path2 {
+  &:before {
+    content: $icon-logo_google_g_icon-path2;  
+    margin-left: -1em;  
+    color: rgb(52, 163, 83);
+  }
 }
-.icon-github:before {
-  content: "\e903";
-  color: #fff;
+.icon-logo_google_g_icon .path3 {
+  &:before {
+    content: $icon-logo_google_g_icon-path3;  
+    margin-left: -1em;  
+    color: rgb(246, 183, 4);
+  }
 }
-.icon-google .path1:before {
-  content: "\e904";
-  color: rgb(66, 133, 244);
+.icon-logo_google_g_icon .path4 {
+  &:before {
+    content: $icon-logo_google_g_icon-path4;  
+    margin-left: -1em;  
+    color: rgb(229, 67, 53);
+  }
 }
-.icon-google .path2:before {
-  content: "\e905";
-  margin-left: -1em;
-  color: rgb(52, 168, 83);
+.icon-x {
+  &:before {
+    content: $icon-x; 
+  }
 }
-.icon-google .path3:before {
-  content: "\e906";
-  margin-left: -1em;
-  color: rgb(251, 188, 5);
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;     
+    color: #1877f2;
+  }
 }
-.icon-google .path4:before {
-  content: "\e907";
-  margin-left: -1em;
-  color: rgb(234, 67, 53);
+.icon-chevron-right-small {
+  &:before {
+    content: $icon-chevron-right-small; 
+  }
 }
-.icon-twitter:before {
-  content: "\e908";
-  color: #fff;
+.icon-Star {
+  &:before {
+    content: $icon-Star;     
+    color: #fec84b;
+  }
 }
+.icon-world {
+  &:before {
+    content: $icon-world; 
+  }
+}
+.icon-burger-icon {
+  &:before {
+    content: $icon-burger-icon;     
+    color: #777e91;
+  }
+}
+.icon-github {
+  &:before {
+    content: $icon-github;     
+    // color: #fff;
+  }
+}
+.icon-star-empty {
+  &:before {
+    content: $icon-star-empty; 
+  }
+}
+.icon-star-half {
+  &:before {
+    content: $icon-star-half; 
+  }
+}
+

@@ -63,9 +63,16 @@
           height: 36px;
           background-color: $white;
           border-radius: 50%;
+          text-decoration: none;
           img {
-            width: 18px;
-            height: 18px;
+            width: 30px;
+            height: 30px;
+          }
+
+          span{
+            font-size: pxToRem(30);
+            color:$black;
+         
           }
         }
       }
@@ -125,6 +132,12 @@
 
     &__socials {
       justify-content: flex-start;
+      a{
+        background-color: transparent !important;
+        span{
+          color:$white !important;
+        }
+      }
     }
   }
 }
