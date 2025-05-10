@@ -1,5 +1,5 @@
 <div class="rating">
-  @for (star of fullStars; track star) {
+  @for (star of fullStars; track $index) {
     <span class="pi pi-star-fill"></span>
   }
   @if (hasHalfStar) {
