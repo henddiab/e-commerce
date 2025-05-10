@@ -43,7 +43,10 @@
                 <span class="checkout__radio-custom"></span>
                 <span class="checkout__radio-text">Credit/Debit Card</span>
               </label>
-              <img src="assets/imgs/visa-mastercard.png" alt="Cards" />
+              <img
+                src="./../../../assets/images/checkout/visa.svg"
+                alt="Cards"
+              />
             </div>
 
             <div class="checkout__field">
@@ -116,28 +119,28 @@
     <ng-container>
       <div class="checkout__formData">
         <div class="checkout__fields">
-          <div class="checkout__field">
-            <label>Country</label>
+          <div class="checkout__field flex-row">
+            <label>Country:</label>
             <p>{{ checkoutForm.get("country")?.value }}</p>
           </div>
-          <div class="checkout__field">
-            <label>State</label>
+          <div class="checkout__field flex-row">
+            <label>State:</label>
             <p>{{ checkoutForm.get("state")?.value }}</p>
           </div>
-          <div class="checkout__field">
-            <label>Name of Card</label>
+          <div class="checkout__field flex-row">
+            <label>Name of Card:</label>
             <p>{{ checkoutForm.get("cardName")?.value }}</p>
           </div>
-          <div class="checkout__field">
-            <label>Card Number</label>
+          <div class="checkout__field flex-row">
+            <label>Card Number:</label>
             <p>{{ checkoutForm.get("cardNumber")?.value }}</p>
           </div>
-          <div class="checkout__field">
-            <label>Expiry Date</label>
+          <div class="checkout__field flex-row">
+            <label>Expiry Date:</label>
             <p>{{ checkoutForm.get("expiryDate")?.value }}</p>
           </div>
-          <div class="checkout__field">
-            <label>CVC/CVV</label>
+          <div class="checkout__field flex-row">
+            <label>CVC/CVV:</label>
             <p>{{ checkoutForm.get("cvc")?.value }}</p>
           </div>
         </div>

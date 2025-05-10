@@ -12,6 +12,13 @@
 }
 
 .secondary-btn {
+  width: 100%;
+ padding: pxToRem(14);
+ font-size: pxToRem(14);
+ font-weight: 500;
+ margin-bottom: pxToRem(16);
+ border-radius: 8px;
+ cursor: pointer;
  background-color: $white;
  border: 1px solid $primary;
  color: $primary;

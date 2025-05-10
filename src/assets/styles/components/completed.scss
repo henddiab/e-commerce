@@ -7,9 +7,7 @@
   padding: pxToRem(96) 0;
 
   &__title {
-    font-size: pxToRem(40);
-    font-weight: $font-weight-semiBold;
-    color: $grey-900;
+    @extend %header-large;
     margin: 1rem 0;
   }
 

@@ -9,10 +9,14 @@ import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcru
 import { OrderDetailsComponent } from '../../shared/components/order-details/order-details.component';
 import { BreadcrumbItem } from '../../shared/models/breadcrumb.interface';
 import { RouterModule } from '@angular/router';
-import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-checkout',
-  imports: [ReactiveFormsModule, BreadcrumbComponent, OrderDetailsComponent,RouterModule,NgClass],
+  imports: [
+    ReactiveFormsModule,
+    BreadcrumbComponent,
+    OrderDetailsComponent,
+    RouterModule,
+  ],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss',
 })
@@ -45,7 +49,7 @@ export class CheckoutComponent {
     });
   }
 
-  backToForm(){
+  backToForm() {
     this.showConfirmation = false;
   }
 

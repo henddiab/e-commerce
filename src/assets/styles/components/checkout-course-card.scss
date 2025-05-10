@@ -1,64 +1,57 @@
-.total-courses{
-
-}
-.course-cart{
- border: 1px solid $grey_border;
- padding: pxToRem(16);
- display: flex;
- justify-content: space-between;
- margin-bottom: pxToRem(16);
- border-radius: pxToRem(8);
- &__item{
+.course-cart {
+  border: 1px solid $grey_border;
+  padding: pxToRem(16);
   display: flex;
-  &-img{
-   position: relative;
-   width: pxToRem(192);
-   height: pxToRem(108);
-   margin-inline-end: pxToRem(13);
-   img{
-    width: 100%;
-    height: 100%;
-   }
-   span{
-    position: absolute;
-    display: inline-block;
-    font-size: pxToRem(12);
-    font-weight: $font-weight-bold;
-    font-family: $bold;
-    top: pxToRem(6);
-    right: pxToRem(5);
-    padding: pxToRem(5) pxToRem(10);
-    color: $white;
-    background-color: $pink;
-
-
-   }
-  }
-
-  &-details{
-
-   h5{
-    font-weight: $font-weight-semiBold;
-    font-size: pxToRem(18);
-    margin-bottom: 0;
-   }
-   >span{
-    font-size: pxToRem(14);
-    color: $black;
-    padding-inline-start: pxToRem(16);
-    margin-bottom: pxToRem(8);
-    &.author{
-     padding: 0;
-     color: $grey_700;
+  justify-content: space-between;
+  margin-bottom: pxToRem(16);
+  border-radius: pxToRem(8);
+  &__item {
+    display: flex;
+    &-img {
+      position: relative;
+      width: pxToRem(192);
+      height: pxToRem(108);
+      margin-inline-end: pxToRem(13);
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      span {
+        position: absolute;
+        display: inline-block;
+        font-size: pxToRem(12);
+        font-weight: $font-weight-bold;
+        font-family: $bold;
+        top: pxToRem(6);
+        right: pxToRem(5);
+        padding: pxToRem(5) pxToRem(10);
+        color: $white;
+        background-color: $pink;
+      }
     }
-   }
 
-   .remove{
-    text-decoration: none;
-    font-size: pxToRem(14);
-    color: $error;
-   }
+    &-details {
+      h5 {
+        font-weight: $font-weight-semiBold;
+        font-size: pxToRem(18);
+        margin-bottom: 0;
+      }
+      > span {
+        font-size: pxToRem(14);
+        color: $black;
+        padding-inline-start: pxToRem(16);
+        margin-bottom: pxToRem(8);
+        &.author {
+          padding: 0;
+          color: $grey_700;
+        }
+      }
+
+      .remove {
+        text-decoration: none;
+        font-size: pxToRem(14);
+        color: $error;
+      }
+    }
   }
-
- }
 }
