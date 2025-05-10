@@ -21,14 +21,29 @@ import { RouterModule } from '@angular/router';
   styleUrl: './checkout.component.scss',
 })
 export class CheckoutComponent {
+  /**
+   * Breadcrumb items for navigation display.
+   */
   breadCrumbItems: BreadcrumbItem[] = [
     { label: 'Home', url: '/' },
     { label: 'Shopping cart', url: '/shopping-cart' },
     { label: 'Checkout' },
   ];
+
+  /**
+   * Reactive form group for the checkout form.
+   */
   checkoutForm: FormGroup;
+
+  /**
+   * Flag to toggle between the checkout form and confirmation view.
+   */
   showConfirmation: boolean = false;
 
+  /**
+   * Constructor to initialize the form group with validation rules.
+   * @param fb - FormBuilder instance for creating the reactive form.
+   */
   constructor(private fb: FormBuilder) {
     this.checkoutForm = this.fb.group({
       country: ['', Validators.required],
@@ -49,16 +64,22 @@ export class CheckoutComponent {
     });
   }
 
+  /**
+   * Navigates back to the checkout form by toggling the confirmation view off.
+   */
   backToForm() {
     this.showConfirmation = false;
   }
 
+  /**
+   * Proceeds to the confirmation view by toggling the checkout form off.
+   * This method is triggered when the "Proceed to Checkout" button is clicked.
+   */
   proceedToCheckout = () => {
-    this.showConfirmation = true;
-    // if (this.checkoutForm.valid) {
-    //   console.log(this.checkoutForm.value);
-    // } else {
-    //   this.checkoutForm.markAllAsTouched();
-    // }
+    if (this.checkoutForm.valid) {
+      this.showConfirmation = true;
+    } else {
+      this.checkoutForm.markAllAsTouched();
+    }
   };
 }

@@ -8,8 +8,16 @@ import { banners } from '../../../shared/models/banners.interface';
   providedIn: 'root',
 })
 export class BannersService {
+  /**
+   * HttpClient instance for making HTTP requests.
+   * This is injected using Angular's dependency injection system.
+   */
   private http = inject(HttpClient);
 
+  /**
+   * Signal that holds the list of banners fetched from the API.
+   * The signal is initialized with an empty array and updated with the API response.
+   */
   banners = toSignal(
     this.http
       .get<{ banners: banners[] }>(APIURL.Banners)

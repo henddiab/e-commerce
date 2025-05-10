@@ -15,6 +15,9 @@ import { BreadcrumbItem } from '../../shared/models/breadcrumb.interface';
   styleUrl: './shopping-cart.component.scss',
 })
 export class ShoppingCartComponent {
+  /**
+   * Breadcrumb items for navigation display.
+   */
   breadCrumbItems: BreadcrumbItem[] = [
     { label: 'Home', url: '/' },
     { label: 'Shopping cart' },
