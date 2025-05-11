@@ -5,6 +5,13 @@
   color: $grey_300;
 
   &__section {
+    &--copyright {
+      p {
+        font-size: pxToRem(12);
+        color: $footer_copyright;
+        margin: 0;
+      }
+    }
     &--about {
       margin-bottom: pxToRem(64);
     }
@@ -51,28 +58,8 @@
       .footer__socials {
         display: flex;
         justify-content: start;
-        gap: 1rem;
+        gap: 2rem;
         margin: pxToRem(24) 0;
-
-        a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          background-color: $white;
-          border-radius: 50%;
-          text-decoration: none;
-          img {
-            width: 30px;
-            height: 30px;
-          }
-
-          span {
-            font-size: pxToRem(30);
-            color: $black;
-          }
-        }
       }
     }
   }
@@ -87,11 +74,6 @@
     height: 1px;
     background-color: $footer_divider;
     margin: pxToRem(28) 0;
-  }
-
-  &__copyright {
-    font-size: pxToRem(12);
-    color: $footer_copyright;
   }
 
   // Desktop overrides

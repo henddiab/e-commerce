@@ -9,6 +9,15 @@
       background-image: url("/assets/images/burgerMenu.svg") !important;
     }
   }
+
+  .navbar-brand {
+    margin: 0;
+  }
+
+  .navbar-collapse {
+    flex-grow: unset !important;
+  }
+
   .navbar-nav {
     flex-direction: column;
     .nav-item {
@@ -54,10 +63,6 @@
   }
   @media (min-width: 992px) {
     padding: pxToRem(30) pxToRem(38) pxToRem(30) pxToRem(14);
-    .navbar-collapse {
-      background-color: $white;
-    }
-
     .navbar-nav {
       flex-direction: row;
       gap: pxToRem(24);

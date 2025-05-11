@@ -4,6 +4,10 @@
   @media (min-width: 992px) {
     padding: pxToRem(42) pxToRem(40);
   }
+
+  &__card {
+    padding: pxToRem(24) 0;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -103,9 +107,10 @@
   }
 
   &__card-img {
-    margin: pxToRem(24) pxToRem(24) 0;
+    margin: 0 pxToRem(24);
     img {
       width: 100%;
+      border-radius: 8px;
     }
   }
 
@@ -137,7 +142,7 @@
   }
 
   &__share {
-    margin: pxToRem(12) pxToRem(24) pxToRem(24);
+    margin: pxToRem(12) pxToRem(24) 0;
     p {
       margin-bottom: pxToRem(8);
       color: $grey-900;
