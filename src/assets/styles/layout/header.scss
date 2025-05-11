@@ -15,15 +15,25 @@
       .btn {
         padding: pxToRem(10);
         font-size: pxToRem(14);
-        font-weight: 500;
+        font-weight: $font-weight-medium;
         border-radius: 0 !important;
         &.login {
           border: 1px solid $primary;
           color: $primary;
+          &:hover {
+            background-color: $primary;
+            color: $white;
+            box-shadow: 0 2px $grey_100;
+            transform: translateY(3px);
+          }
         }
         &.signup {
           background-color: $primary;
           color: $white;
+          &:hover {
+            box-shadow: 0 2px $grey_100;
+            transform: translateY(3px);
+          }
         }
       }
       .indicator {
@@ -33,7 +43,7 @@
         height: 14px;
         color: $white;
         font-size: 9px;
-        font-weight: 500;
+        font-weight: $font-weight-medium;
         border-radius: 50%;
         display: flex;
         justify-content: center;
