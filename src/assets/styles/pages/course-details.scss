@@ -1,6 +1,9 @@
 .course-details {
-  padding: pxToRem(42) pxToRem(40);
+  padding: pxToRem(24);
 
+  @media (min-width: 992px) {
+    padding: pxToRem(42) pxToRem(40);
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -12,6 +15,7 @@
   }
 
   &__info {
+    margin-bottom: pxToRem(24);
     @media (min-width: 992px) {
       width: pxToRem(778);
       height: fit-content;
@@ -82,7 +86,11 @@
   }
 
   &__languages {
+    display: flex;
     @extend %header-regular;
+    img {
+      margin-inline-end: pxToRem(12);
+    }
   }
 
   &__sidebar {
@@ -105,6 +113,7 @@
     font-size: 1.2rem;
     margin: pxToRem(32) pxToRem(24) pxToRem(24);
     font-weight: $font-weight-semiBold;
+    width: fit-content;
 
     & .course-details__current-price {
       @extend %header-medium;
@@ -133,21 +142,6 @@
       margin-bottom: pxToRem(8);
       color: $grey-900;
       font-size: pxToRem(16);
-    }
-  }
-
-  &__socials {
-    display: flex;
-    gap: 1rem;
-
-    img {
-      width: 24px;
-      height: 24px;
-      transition: transform 0.2s ease;
-
-      &:hover {
-        transform: scale(1.1);
-      }
     }
   }
 }

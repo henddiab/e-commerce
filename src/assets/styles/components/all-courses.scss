@@ -4,7 +4,7 @@
   &-content {
     display: flex;
     justify-content: center;
-    padding: pxToRem(40) pxToRem(20);
+    padding: pxToRem(40) pxToRem(20) 0;
     p-tabpanels {
       padding: 0;
     }
@@ -34,12 +34,14 @@
 
     @media screen and (min-width: 992px) {
       display: unset;
+      padding: pxToRem(40) pxToRem(20);
     }
   }
 
   &-title {
     @extend %header-medium;
     padding: pxToRem(30) 0;
+    height: 70px;
   }
   p-tablist {
     display: none;

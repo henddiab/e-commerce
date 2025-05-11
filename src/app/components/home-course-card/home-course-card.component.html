@@ -1,6 +1,6 @@
 <div class="course-card">
   <div class="course-card__image">
-    <img [src]="course?.image" />
+    <img loading="lazy"  [src]="course?.image" [alt]="course?.title"/>
 
     <div class="course-card__image-overlay">
       @if (course?.discount) {
@@ -8,7 +8,7 @@
 
       }
       <button class="course-card__image-cart">
-        <img src="assets/images/cart.svg" />
+        <img loading="lazy" src="assets/images/cart.svg" alt="cart" />
       </button>
     </div>
   </div>

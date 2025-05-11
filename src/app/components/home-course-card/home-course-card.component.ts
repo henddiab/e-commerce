@@ -4,10 +4,11 @@ import { RatingComponent } from '../../shared/components/rating/rating.component
 import { CategoriesService } from '../../core/services/categories/categories.service';
 import { Category } from '../../shared/models/category.interface';
 import { RouterModule } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home-course-card',
-  imports: [RatingComponent,RouterModule],
+  imports: [RatingComponent, RouterModule],
   templateUrl: './home-course-card.component.html',
   styleUrl: './home-course-card.component.scss',
 })
@@ -16,11 +17,20 @@ export class HomeCourseCardComponent {
   categories$: Category[] = [];
   @Input() course: CourseData | undefined;
 
+  subscription: Subscription = new Subscription();
+
   ngOnInit() {
-    this.categoriesService.categories().subscribe((categories) => {
-      this.categories$ = categories;
+    this.getCatregories();
+  }
+
+  getCatregories(): void {
+    this.categoriesService.categories().subscribe({
+      next: (categories) => {
+        this.categories$ = categories;
+      }
     });
   }
+
   getCategoryName(categoryId: number): string {
     const category = this.categories$.find(
       (category: Category) => category.id === categoryId.toString()

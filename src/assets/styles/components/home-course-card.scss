@@ -73,7 +73,9 @@
 
     &-title {
       cursor: pointer;
-      @extend %header-medium;
+      font-size: pxToRem(18);
+      font-weight: $font-weight-semiBold;
+      color: $grey-900;
     }
 
     &-author {
@@ -93,8 +95,10 @@
     }
 
     &-details {
-      @extend %header-regular;
-      margin: 8px 0;
+      p {
+        @extend %header-regular;
+        margin: 8px 0;
+      }
     }
   }
 }

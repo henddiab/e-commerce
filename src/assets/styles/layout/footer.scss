@@ -72,7 +72,7 @@
           span{
             font-size: pxToRem(30);
             color:$black;
-         
+
           }
         }
       }
@@ -101,6 +101,7 @@
     background-color: $grey-800;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     padding: pxToRem(106) pxToRem(32);
 
     &__description {

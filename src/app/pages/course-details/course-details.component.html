@@ -22,6 +22,7 @@
 
       <div class="course-details__creator">
         <img
+          loading="lazy"
           [src]="courseData.image"
           alt="Jane Doe"
           class="course-details__creator-img"
@@ -33,7 +34,8 @@
       </div>
 
       <div class="course-details__languages">
-        🌐 English, Spanish, Italian, German
+        <img src="assets/images/world.svg" alt="world" loading="lazy" />
+        <span>English, Spanish, Italian, German</span>
       </div>
     </div>
 
@@ -42,8 +44,10 @@
       <div class="course-details__card">
         <div class="course-details__card-img">
           <img
-            src="assets/images/course_details/crs_image.svg"
-            alt="Course Thumbnail"
+            loading="lazy"
+            [src]="courseData.image"
+            [alt]="courseData.title"
+            height="200"
           />
         </div>
 
@@ -58,12 +62,8 @@
         </div>
 
         <div class="course-details__buttons">
-          <button class="primary-btn">
-            Add To Cart
-          </button>
-          <button class="secondary-btn">
-            Buy Now
-          </button>
+          <button class="primary-btn">Add To Cart</button>
+          <button class="secondary-btn">Buy Now</button>
         </div>
 
         <div class="divider"></div>
@@ -71,11 +71,11 @@
         <div class="course-details__share">
           <p>Share</p>
           <div class="course-details__socials">
-            <img src="assets/icons/facebook.png" alt="Facebook" />
-            <img src="assets/icons/github.png" alt="GitHub" />
-            <img src="assets/icons/google.png" alt="Google" />
-            <img src="assets/icons/x.png" alt="X" />
-            <img src="assets/icons/microsoft.png" alt="Microsoft" />
+            <img
+              loading="lazy"
+              src="assets/images/socials.svg"
+              alt="social media"
+            />
           </div>
         </div>
       </div>
