@@ -12,7 +12,7 @@
       <p-tabpanels>
         @for (category of categories$; track category.id) {
         <p-tabpanel [value]="category.id">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row">
               @for( course of filterCoursesByCategory(category.id); track course.id) {
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">

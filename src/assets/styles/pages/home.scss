@@ -25,14 +25,6 @@
     height: pxToRem(143);
     border-radius: 50%;
   }
-  &-bottom-bg-circles {
-    bottom: 0;
-    right: 0;
-    background-image: url("/assets/images/banner/circles.svg");
-    background-position: bottom right;
-    width: pxToRem(190);
-    height: pxToRem(190);
-  }
   @media screen and (min-width: 992px) {
     padding: 0 pxToRem(20) pxToRem(40);
     &-bottom-bg {

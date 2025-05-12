@@ -13,13 +13,11 @@ import { banners } from '../../shared/models/banners.interface';
 })
 export class BannersComponent {
   private bannerService = inject(BannersService);
-  banners:banners[]= this.bannerService.banners()
+  banners: banners[] = this.bannerService.banners();
 
   bannerSlider: Swiper | undefined;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit() {
     console.log(this.banners);
@@ -27,10 +25,10 @@ export class BannersComponent {
       this.bannerSlider = new Swiper('.banner-slider', {
         modules: [Pagination, Navigation, Grid],
         loop: true,
+        autoplay: true,
         slidesPerView: 1,
         centeredSlides: true,
         centeredSlidesBounds: true,
-
         watchSlidesProgress: true,
         pagination: {
           el: '.swiper-pagination',

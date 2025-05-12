@@ -3,6 +3,7 @@
   position: relative;
   .swiper {
     width: 100%;
+    position: relative;
     .swiper-slide {
       display: flex;
       justify-content: center;
@@ -13,6 +14,39 @@
       }
       img {
         width: 100%;
+      }
+    }
+    &-big-dot,
+    &-small-dot {
+      background-color: $primary;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      &::after {
+        font-size: 0;
+      }
+    }
+    &-small-dot {
+      width: 32px;
+      height: 32px;
+      top: unset;
+      left: 22%;
+      bottom: 10%;
+      @media screen and (min-width: 992px) {
+        left: 55%;
+        bottom: 27%;
+      }
+    }
+    .swiper-button-prev {
+      width: 16px;
+      height: 16px;
+      top: unset;
+      left: 10%;
+      bottom: 4%;
+      opacity: .6;
+      @media screen and (min-width: 992px) {
+        left: 51%;
+        bottom: 21%;
       }
     }
   }
@@ -38,6 +72,24 @@
     margin: 0 auto;
     height: 100%;
 
+    &-bottom-bg-circles {
+      bottom: 0;
+      right: 10%;
+      background-image: url("/assets/images/banner/circles.svg");
+      background-position: bottom right;
+      width: pxToRem(192);
+      height: pxToRem(190);
+      position: absolute;
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+      @media screen and (min-width: 992px) {
+        width: pxToRem(313);
+        height: pxToRem(309);
+      }
+    }
+
     &--details {
       width: 100%;
       padding: 0 1rem 2.5rem;
@@ -46,27 +98,24 @@
         background-repeat: no-repeat;
         background-position: 0 0;
         padding: pxToRem(48) pxToRem(8);
-        width: 50%;
+        width: 54%;
       }
       &-title {
         @media screen and (min-width: 992px) {
+          width: 90%;
           h1,
           h1 span {
             font-size: pxToRem(56);
             letter-spacing: -0.5px;
+            font-family: $bold;
           }
-        }
-        h1,
-        h1 span {
-          font-size: pxToRem(40);
-          font-family: $bold;
-          letter-spacing: -2px;
         }
         span {
           color: $primary;
         }
       }
       &-brief {
+        width: 65%;
         p {
           font-size: pxToRem(14);
           color: $footer_copyright;
@@ -93,14 +142,15 @@
     }
 
     &--img {
-      // background-image: url("/assets/images/banner/circles.svg");
-      // background-repeat: no-repeat;
-      // background-position: bottom right;
+      height: pxToRem(380);
       display: flex;
+      align-items: start;
       justify-content: center;
       @media screen and (min-width: 992px) {
+        justify-content: start;
+        height: unset;
         padding-bottom: 0;
-        width: 50%;
+        width: 46%;
       }
       &-outer {
         width: pxToRem(270);
