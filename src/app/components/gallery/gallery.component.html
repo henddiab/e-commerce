@@ -1,1 +1,44 @@
-<p>gallery works!</p>
+<div class="gallery__section-details">
+    <div class="gallery__section-details-title">
+        <h2><span>Check</span> our latest Media Gallery</h2>
+    </div>
+    <div class="gallery__section-details-desc">
+        <p>Every picture holds a moment, every moment holds a story</p>
+    </div>
+    <div class="gallery__section-details-btn">
+        <a href="" class="btn-primary"></a>
+    </div>
+</div>
+
+
+<div class="gallery__section-slider">
+
+    <div class="swiper gallerySwiper" #swiperRef>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let slide of slides">
+                      <img [src]="slide?.image" class="slide-image" />
+
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="nav-buttons">
+        <button (click)="slidePrev()">
+            <span>&laquo;</span>
+        </button>
+        <button (click)="slideNext()">
+            <span>&raquo;</span>
+        </button>
+    </div>
+    <p class="pagination">
+  {{ activeIndex + 1 }}/{{ slides.length }}
+</p>
+<div class="custom-pagination">
+        <span class="current-slide">1</span>
+        <span>/</span>
+        <span class="total-slides">5</span>
+    </div>
+</div>

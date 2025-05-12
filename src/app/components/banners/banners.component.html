@@ -1,1 +1,59 @@
-<p>banners works!</p>
+<div class="swiper banner-slider">
+  <div class="swiper-wrapper">
+    @for (banner of banners; track $index) {
+    <div class="swiper-slide">
+      <div class="banner__wrapper">
+        <div class="banner__wrapper--details">
+          <div
+            class="banner__wrapper--details-title"
+            [innerHTML]="banner?.title"
+          ></div>
+          <div class="banner__wrapper--details-brief">
+            <p>
+              {{ banner?.brief }}
+            </p>
+          </div>
+          <div class="banner__wrapper--details-btn">
+            <a type="button" class="primary-btn">Get Started</a>
+          </div>
+        </div>
+        <div class="banner__wrapper--img">
+          <div class="banner__wrapper--img-outer">
+            <div class="banner__wrapper--img main-img">
+              <img [src]="banner.image" alt="banner-img" />
+            </div>
+            <div class="online-courses">
+              <img src="assets/images/banner/Progress-circle.svg" alt="" />
+              <h2>5K+</h2>
+              <p>Online Courses</p>
+            </div>
+            <div class="video-courses">
+              <div class="icon-wrapper">
+                <img src="assets/images/banner/Online-Education.svg" alt="" />
+              </div>
+              <div class="details-wrapper">
+                <h2>2K+</h2>
+                <p>Video Courses</p>
+              </div>
+            </div>
+            <div class="tutors">
+              <div class="icon-wrapper">
+                <img src="assets/images/banner/Board.svg" alt="" />
+              </div>
+              <div class="details-wrapper">
+                <p>Tutors</p>
+                <h2>2K+</h2>
+              </div>
+            </div>
+            <div class="big-dot"></div>
+            <div class="small-dot"></div>
+          </div>
+          <div class="banner__wrapper--img-inner"></div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>

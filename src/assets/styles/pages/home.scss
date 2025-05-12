@@ -1,9 +1,58 @@
 .homepage__container {
-  padding: pxToRem(16) pxToRem(20) pxToRem(40);
   display: flex;
   flex-direction: column;
   align-items: center;
-  &-courses{
+  &-bottom-bg,
+  &-top-bg,
+  &-bottom-bg-circles {
+    position: absolute;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &-bottom-bg {
+    background: url("/assets/images/banner/banner-bottom-left-bg-mobile.svg");
+    bottom: 0;
+    width: pxToRem(145);
+    height: pxToRem(177);
+    border-radius: 50%;
+  }
+  &-top-bg {
+    background: url("/assets/images/banner/banner-top-right-bg-mobile.svg");
+    top: 40%;
+    right: 0;
+    width: pxToRem(131);
+    height: pxToRem(143);
+    border-radius: 50%;
+  }
+  &-bottom-bg-circles {
+    bottom: 0;
+    right: 0;
+    background-image: url("/assets/images/banner/circles.svg");
+    background-position: bottom right;
+    width: pxToRem(190);
+    height: pxToRem(190);
+  }
+  @media screen and (min-width: 992px) {
+    padding: 0 pxToRem(20) pxToRem(40);
+    &-bottom-bg {
+      background: url("/assets/images/banner/banner-bottom-left-bg.svg");
+      width: pxToRem(355);
+      height: pxToRem(350);
+    }
+    &-top-bg {
+      background: url("/assets/images/banner/banner-top-right-bg.svg");
+      top: 0;
+      width: pxToRem(366);
+      height: pxToRem(361);
+    }
+    &-bottom-bg-circles {
+      width: pxToRem(309);
+      height: pxToRem(309);
+    }
+  }
+
+  &-courses {
     width: 100%;
   }
 }

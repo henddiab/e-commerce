@@ -22,6 +22,9 @@
 @import "components/completed.scss";
 @import "components/home-course-card.scss";
 @import "components/all-courses.scss";
+@import "components/home-gallery.scss";
+@import "components/banner.scss";
+
 
 * {
   font-size: 16px;
@@ -32,10 +35,10 @@
   font-weight: $font-weight-regular;
   text-decoration: none;
   list-style: none;
-  @media screen and (max-width: 1280px) {
-    font-size: 14px;
-  }
-  @media screen and (max-width: 1024px) {
-    font-size: 12px;
-  }
+  // @media screen and (max-width: 1280px) {
+  //   font-size: 14px;
+  // }
+  // @media screen and (max-width: 1024px) {
+  //   font-size: 12px;
+  // }
 }
