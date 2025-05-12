@@ -1,48 +1,69 @@
-
 <div class="gallery__section-wrapper">
-
   <div class="gallery__section-details">
-      <div class="gallery__section-details-title">
-          <h2><span>Check</span> our latest Media Gallery</h2>
-      </div>
-      <div class="gallery__section-details-desc">
-          <p>Every picture holds a moment, every moment holds a story</p>
-      </div>
-      <div class="gallery__section-details-btn">
-          <a href="" class="btn-primary"></a>
-      </div>
+    <div class="gallery__section-details-title">
+      <h2><span>Check</span> our latest Media Gallery</h2>
+    </div>
+    <div class="gallery__section-details-desc">
+      <p>Every picture holds a moment, every moment holds a story</p>
+    </div>
+    <div class="gallery__section-details-btn">
+      <a href="" class="primary-btn"> view all photos</a>
+    </div>
   </div>
 
-
   <div class="gallery__section-slider">
-
-      <div class="swiper gallerySwiper" #swiperRef>
-          <div class="swiper-wrapper">
-              <div class="swiper-slide" *ngFor="let slide of slides">
-                        <img [src]="slide?.image" class="slide-image" />
-
-              </div>
+    <div class="swiper gallerySwiper media-slider" #swiperRef>
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide position-relative"
+          *ngFor="let slide of slides"
+        >
+          <div class="img-container">
+            <div class="overlay"></div>
+            <img [src]="slide?.image" class="slide-image" alt="gallery-img"/>
+            <button
+              aria-label="Name"
+              aria-labelledby="labeldiv"
+              aria-label="Aria Name"
+              class="position-absolute"
+              style="top: 20px; right: 20px; border: none; background: none"
+            >
+              <img src="assets/images/view-image.svg" alt="" loading="lazy" />
+            </button>
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev gallery-prev"></div>
-          <div class="swiper-button-next gallery-next"></div>
+        </div>
       </div>
+      <div class="gallery-bar swiper-pagination"></div>
+      <div class="swiper-button-prev gallery-prev visible-hidden"></div>
+      <div class="swiper-button-next gallery-next visible-hidden"></div>
+    </div>
 
-      <div class="nav-buttons">
-          <button (click)="slidePrev()">
-              <span>&laquo;</span>
-          </button>
-          <button (click)="slideNext()">
-              <span>&raquo;</span>
-          </button>
-      </div>
-      <p class="pagination">
+    <div class="nav-buttons">
+      <button
+        (click)="slidePrev()"
+        aria-label="Name"
+        aria-labelledby="labeldiv"
+        aria-label="Aria Name"
+      >
+        <span>&laquo;</span>
+      </button>
+      <button
+        (click)="slideNext()"
+        aria-label="Name"
+        aria-labelledby="labeldiv"
+        aria-label="Aria Name"
+      >
+        <span>&raquo;</span>
+      </button>
+    </div>
+    <!-- <p class="pagination">
     {{ activeIndex + 1 }}/{{ slides.length }}
-  </p>
-  <div class="custom-pagination">
+  </p> -->
+    <!-- <div class="custom-pagination">
           <span class="current-slide">1</span>
           <span>/</span>
           <span class="total-slides">5</span>
       </div>
+  </div> -->
   </div>
 </div>

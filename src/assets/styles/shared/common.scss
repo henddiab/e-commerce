@@ -5,3 +5,10 @@
  background-color: $grey_border;
  margin: pxToRem(12) 0;
 }
+
+.d-none{
+  display: none;
+}
+.visible-hidden{
+  visibility: hidden;
+}

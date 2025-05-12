@@ -20,16 +20,26 @@
         <div class="banner__wrapper--img">
           <div class="banner__wrapper--img-outer">
             <div class="banner__wrapper--img main-img">
-              <img [src]="banner.image" alt="banner-img" />
+              <img [src]="banner.image" alt="banner-img" loading="lazy" />
             </div>
             <div class="online-courses">
-              <img src="assets/images/banner/Progress-circle.svg" alt="" />
+              <div class="progress-ring">
+                <div class="progress-ring">
+                  <svg class="ring" width="80" height="80">
+                    <circle class="track" cx="40" cy="40" r="32" />
+                    <circle class="progress" cx="40" cy="40" r="32" />
+                  </svg>
+                </div>
+              </div>
               <h2>5K+</h2>
               <p>Online Courses</p>
             </div>
             <div class="video-courses">
               <div class="icon-wrapper">
-                <img src="assets/images/banner/Online-Education.svg" alt="" />
+                <img
+                  src="assets/images/banner/Online-Education.svg"
+                  alt="banner-education"
+                />
               </div>
               <div class="details-wrapper">
                 <h2>2K+</h2>
@@ -38,7 +48,12 @@
             </div>
             <div class="tutors">
               <div class="icon-wrapper">
-                <img src="assets/images/banner/Board.svg" alt="" />
+                <img
+                  src="assets/images/banner/Board.svg"
+                  alt="banner-board"
+                  loading="lazy
+                "
+                />
               </div>
               <div class="details-wrapper">
                 <p>Tutors</p>

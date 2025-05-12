@@ -21,8 +21,8 @@ export class GalleryService {
    */
   gallery = toSignal(
     this.http
-      .get<{ gallery: gallery[] }>(APIURL.Gallery)
-      .pipe(map((res) => res.gallery)),
+      .get<{ Slider: gallery[] }>(APIURL.Gallery)
+      .pipe(map((res) => res.Slider)),
     { initialValue: [] }
   );
 }

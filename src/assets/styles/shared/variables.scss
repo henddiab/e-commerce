@@ -12,3 +12,10 @@ $font-weight-bold: 700;
 
 // shadows
 $dark_shadow: 0px 0px 8px 0px #3b82f61f;
+
+// progress
+$track-color: #f0f2f5;
+$progress-color: #00baff;
+$radius: 32;
+$stroke-width: 8;
+$circumference: 2 * 3.1416 * $radius;

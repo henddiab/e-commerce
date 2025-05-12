@@ -1,8 +1,15 @@
-import { Component, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import {
+  Component,
+  inject,
+  Inject,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 import Swiper from 'swiper';
 import { Pagination, Navigation, Grid } from 'swiper/modules';
+import { GalleryService } from '../../core/services/gallery/gallery.service';
 
 // import 'swiper/css/bundle';
 
@@ -13,34 +20,9 @@ import { Pagination, Navigation, Grid } from 'swiper/modules';
   styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent {
-  slides = [
-    {
-      id: 1,
-      image:
-        'https://fastly.picsum.photos/id/26/4209/2769.jpg?hmac=vcInmowFvPCyKGtV7Vfh7zWcA_Z0kStrPDW3ppP0iGI',
-    },
-    {
-      id: 2,
-      image:
-        'https://fastly.picsum.photos/id/9/5000/3269.jpg?hmac=cZKbaLeduq7rNB8X-bigYO8bvPIWtT-mh8GRXtU3vPc',
-    },
-    {
-      id: 3,
-      image:
-        'https://fastly.picsum.photos/id/18/2500/1667.jpg?hmac=JR0Z_jRs9rssQHZJ4b7xKF82kOj8-4Ackq75D_9Wmz8',
-    },
-    {
-      id: 4,
-      image:
-        'https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA',
-    },
-    {
-      id: 5,
-      image:
-        'https://fastly.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g',
-    },
-  ];
-  activeIndex = 0;
+  private galleryService = inject(GalleryService);
+  slides = this.galleryService.gallery();
+  activeIndex: any = 0;
   gallerySwiper: Swiper | undefined;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
@@ -57,31 +39,29 @@ export class GalleryComponent {
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.gallerySwiper = new Swiper('.gallerySwiper', {
-        modules: [Pagination, Navigation, Grid],
-        loop: true,
-        slidesPerView: 1.8,
-        centeredSlides: true,
-        // centeredSlidesBounds: true,
+        slidesPerView: 1.3,
         spaceBetween: 20,
-        // watchSlidesProgress: true,
+        loop: false,
         pagination: {
           el: '.swiper-pagination',
           type: 'progressbar',
-          // progressbarOpposite:true,
-          clickable: false,
+          clickable: true,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.gallery-next',
+          prevEl: '.gallery-prev',
         },
         breakpoints: {
           992: {
-            slidesPerView: 5,
+            slidesPerView: 3,
             spaceBetween: -400,
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
+            centeredSlides: true,
+            loop: true,
+          },
+        },
+        on: {
+          slideChange: () => {
+            this.activeIndex = this.gallerySwiper?.realIndex;
           },
         },
       });

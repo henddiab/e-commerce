@@ -26,7 +26,7 @@
     border-radius: 50%;
   }
   @media screen and (min-width: 992px) {
-    padding: 0 pxToRem(20) pxToRem(40);
+    padding: 0 pxToRem(0) pxToRem(40);
     &-bottom-bg {
       background: url("/assets/images/banner/banner-bottom-left-bg.svg");
       width: pxToRem(355);

@@ -1,42 +1,51 @@
 .homepage__container-banner {
   width: 100%;
   position: relative;
+
   .swiper {
     width: 100%;
     position: relative;
+
     .swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 24px;
+
       .slide-container {
         display: flex;
       }
+
       img {
         width: 100%;
       }
     }
+
     &-big-dot,
     &-small-dot {
       background-color: $primary;
       border-radius: 50%;
       position: absolute;
       display: block;
+
       &::after {
         font-size: 0;
       }
     }
+
     &-small-dot {
       width: 32px;
       height: 32px;
       top: unset;
       left: 22%;
       bottom: 10%;
+
       @media screen and (min-width: 992px) {
         left: 55%;
         bottom: 27%;
       }
     }
+
     .swiper-button-prev {
       width: 16px;
       height: 16px;
@@ -44,17 +53,20 @@
       left: 10%;
       bottom: 4%;
       opacity: .6;
+
       @media screen and (min-width: 992px) {
         left: 51%;
         bottom: 21%;
       }
     }
   }
+
   .banner__wrapper {
     display: flex;
     justify-content: center;
     padding-bottom: pxToRem(78);
     height: auto;
+
     @media screen and (min-width: 992px) {
       width: 80%;
       height: 663px;
@@ -65,6 +77,7 @@
       padding-bottom: 0;
       background-color: rgba(36, 187, 140, 0.02);
     }
+
     background-color: transparent;
     display: flex;
     flex-direction: column;
@@ -84,6 +97,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       z-index: -1;
+
       @media screen and (min-width: 992px) {
         width: pxToRem(313);
         height: pxToRem(309);
@@ -93,6 +107,7 @@
     &--details {
       width: 100%;
       padding: 0 1rem 2.5rem;
+
       @media screen and (min-width: 992px) {
         background-image: url("/assets/images/banner/circles.svg");
         background-repeat: no-repeat;
@@ -100,9 +115,11 @@
         padding: pxToRem(48) pxToRem(8);
         width: 54%;
       }
+
       &-title {
         @media screen and (min-width: 992px) {
           width: 90%;
+
           h1,
           h1 span {
             font-size: pxToRem(56);
@@ -110,18 +127,22 @@
             font-family: $bold;
           }
         }
-        span {
-          color: $primary;
-        }
+
+        // span {
+        //   color: $primary;
+        // }
       }
+
       &-brief {
         width: 65%;
+
         p {
           font-size: pxToRem(14);
           color: $footer_copyright;
           padding: pxToRem(8) 0 pxToRem(19);
           margin-bottom: 0;
         }
+
         @media screen and (min-width: 992px) {
           p {
             padding: pxToRem(12) 0 pxToRem(42);
@@ -129,11 +150,13 @@
           }
         }
       }
+
       &-btn {
         .primary-btn {
           width: auto;
           font-size: pxToRem(14);
           padding: pxToRem(8) pxToRem(28);
+
           @media screen and (min-width: 992px) {
             font-size: pxToRem(18);
           }
@@ -146,12 +169,14 @@
       display: flex;
       align-items: start;
       justify-content: center;
+
       @media screen and (min-width: 992px) {
         justify-content: start;
         height: unset;
         padding-bottom: 0;
         width: 46%;
       }
+
       &-outer {
         width: pxToRem(270);
         height: pxToRem(270);
@@ -172,12 +197,14 @@
           position: absolute;
           display: block;
         }
+
         .big-dot {
           width: 32px;
           height: 32px;
           bottom: 0px;
           left: 36px;
         }
+
         .small-dot {
           width: 16px;
           height: 16px;
@@ -197,12 +224,14 @@
           justify-content: center;
           align-items: flex-end;
           overflow: hidden;
+
           img {
             width: pxToRem(168);
             height: pxToRem(206);
             transform: translateY(-15%);
             border-radius: 30%;
           }
+
           @media screen and (min-width: 992px) {
             img {
               width: pxToRem(273);
@@ -216,6 +245,7 @@
         @media screen and (min-width: 992px) {
           width: pxToRem(370);
           height: pxToRem(370);
+
           .online-courses,
           .video-courses,
           .tutors {
@@ -226,16 +256,19 @@
             display: flex;
             align-items: center;
             box-shadow: 0px 18.36px 38.25px 0px #00000026;
+
             .icon-wrapper {
               background-color: $primary;
               border-radius: pxToRem(12);
               padding: pxToRem(8);
             }
+
             h2 {
               font-size: pxToRem(25);
               font-weight: $font-weight-semiBold;
               color: $grey-900;
             }
+
             p {
               font-size: pxToRem(15);
               color: $grey-500;
@@ -251,34 +284,73 @@
             top: pxToRem(-42);
             padding: pxToRem(16) pxToRem(6);
             flex-direction: column;
+
             h2 {
               margin: pxToRem(12);
             }
+
             img {
               width: 80px;
               height: 80px;
             }
+
+            .progress-ring {
+              width: 80px;
+              height: 80px;
+
+              .ring {
+                transform: rotate(-90deg);
+              }
+
+              circle {
+                fill: none;
+                stroke-width: $stroke-width;
+                r: $radius;
+                cx: 40;
+                cy: 40;
+              }
+
+              .track {
+                stroke: $track-color;
+              }
+
+              .progress {
+                stroke: $progress-color;
+                stroke-dasharray: $circumference;
+                stroke-dashoffset: $circumference * 0.6; // 60% progress
+                stroke-linecap: round;
+                transition: stroke-dashoffset 0.35s;
+              }
+            }
+
+
           }
+
           .tutors {
             width: pxToRem(169);
             height: pxToRem(80);
             bottom: pxToRem(8);
             right: pxToRem(-88);
             padding: pxToRem(16);
+
             .details-wrapper {
               margin-inline-start: pxToRem(12);
             }
           }
+
           .video-courses {
             width: pxToRem(159);
             height: pxToRem(66);
             top: pxToRem(126);
             left: pxToRem(-52);
+
             .icon-wrapper {
               transform: translateX(-36px);
             }
+
             .details-wrapper {
               transform: translateX(-14px);
+
               h2 {
                 margin-bottom: 4px;
               }

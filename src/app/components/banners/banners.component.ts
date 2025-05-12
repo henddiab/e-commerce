@@ -20,7 +20,6 @@ export class BannersComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit() {
-    console.log(this.banners);
     if (isPlatformBrowser(this.platformId)) {
       this.bannerSlider = new Swiper('.banner-slider', {
         modules: [Pagination, Navigation, Grid],
