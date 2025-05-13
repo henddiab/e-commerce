@@ -2,6 +2,7 @@ import {
   Component,
   inject,
   Inject,
+  OnInit,
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
@@ -19,13 +20,23 @@ import { GalleryService } from '../../core/services/gallery/gallery.service';
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss',
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
   private galleryService = inject(GalleryService);
   slides = this.galleryService.gallery();
   activeIndex: any = 0;
+  progressPercentage: number = 0;
   gallerySwiper: Swiper | undefined;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit(): void {
+     if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+      this.initSwiper()
+      }, 1000);
+    }
+  }
+
 
   onSlideChange(event: any) {
     this.activeIndex = event.realIndex;
@@ -37,15 +48,16 @@ export class GalleryComponent {
     this.gallerySwiper?.slideNext();
   }
   ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.gallerySwiper = new Swiper('.gallerySwiper', {
+
+  }
+
+  initSwiper(){
+    this.gallerySwiper = new Swiper('.gallerySwiper', {
         slidesPerView: 1.3,
         spaceBetween: 20,
         loop: false,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'progressbar',
-          clickable: true,
+        autoplay:{
+          delay:2000
         },
         navigation: {
           nextEl: '.gallery-next',
@@ -53,8 +65,8 @@ export class GalleryComponent {
         },
         breakpoints: {
           992: {
-            slidesPerView: 3,
-            spaceBetween: -400,
+            slidesPerView: 3.8,
+            spaceBetween: -300,
             centeredSlides: true,
             loop: true,
           },
@@ -62,9 +74,19 @@ export class GalleryComponent {
         on: {
           slideChange: () => {
             this.activeIndex = this.gallerySwiper?.realIndex;
+            this.updateProgress();
           },
         },
       });
+      this.updateProgress();
+  }
+
+  updateProgress() {
+    if (this.gallerySwiper) {
+      this.activeIndex = this.gallerySwiper.realIndex || 0;
+      const totalSlides = this.gallerySwiper.slides.length;
+      this.progressPercentage = ((this.activeIndex + 1) / totalSlides) * 100;
     }
   }
+
 }

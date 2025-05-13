@@ -4,9 +4,17 @@
     <div class="swiper-slide">
       <div class="banner__wrapper">
         <div class="banner__wrapper--details">
+          <div class="circles">
+            <div class="circle circle-1" [style.borderColor]="'#' + banner?.colorCode"></div>
+            <div class="circle circle-2" [style.borderColor]="'#' + banner?.colorCode"></div>
+            <div class="circle circle-3" [style.borderColor]="'#' + banner?.colorCode"></div>
+            <div class="circle circle-4" [style.borderColor]="'#' + banner?.colorCode"></div>
+          </div>
+
           <div
             class="banner__wrapper--details-title"
-            [innerHTML]="banner?.title"
+            [innerHTML]="getTitle(banner?.title , banner?.colorCode) | safeHtml"
+
           ></div>
           <div class="banner__wrapper--details-brief">
             <p>
@@ -14,28 +22,54 @@
             </p>
           </div>
           <div class="banner__wrapper--details-btn">
-            <a type="button" class="primary-btn">Get Started</a>
+            <a
+              type="button"
+              class="primary-btn"
+              [style.backgroundColor]="'#' + banner?.colorCode"
+              >Get Started</a
+            >
           </div>
         </div>
         <div class="banner__wrapper--img">
-          <div class="banner__wrapper--img-outer">
-            <div class="banner__wrapper--img main-img">
+          <div
+            class="banner__wrapper--img-outer"
+            [style.borderColor]="'#' + banner?.colorCode"
+          >
+            <div
+              class="banner__wrapper--img main-img"
+              [style.backgroundColor]="'#' + banner?.colorCode"
+            >
               <img [src]="banner.image" alt="banner-img" loading="lazy" />
             </div>
-            <div class="online-courses">
+            <div
+              class="online-courses"
+              [style.borderColor]="'#' + banner?.colorCode"
+            >
               <div class="progress-ring">
                 <div class="progress-ring">
                   <svg class="ring" width="80" height="80">
                     <circle class="track" cx="40" cy="40" r="32" />
-                    <circle class="progress" cx="40" cy="40" r="32" />
+                    <circle
+                      class="progress"
+                      [style.stroke]="'#' + banner?.colorCode"
+                      cx="40"
+                      cy="40"
+                      r="32"
+                    />
                   </svg>
                 </div>
               </div>
               <h2>5K+</h2>
               <p>Online Courses</p>
             </div>
-            <div class="video-courses">
-              <div class="icon-wrapper">
+            <div
+              class="video-courses"
+              [style.borderColor]="'#' + banner?.colorCode"
+            >
+              <div
+                class="icon-wrapper"
+                [style.backgroundColor]="'#' + banner?.colorCode"
+              >
                 <img
                   src="assets/images/banner/Online-Education.svg"
                   alt="banner-education"
@@ -46,8 +80,11 @@
                 <p>Video Courses</p>
               </div>
             </div>
-            <div class="tutors">
-              <div class="icon-wrapper">
+            <div class="tutors" [style.borderColor]="'#' + banner?.colorCode">
+              <div
+                class="icon-wrapper"
+                [style.backgroundColor]="'#' + banner?.colorCode"
+              >
                 <img
                   src="assets/images/banner/Board.svg"
                   alt="banner-board"
@@ -60,18 +97,36 @@
                 <h2>2K+</h2>
               </div>
             </div>
-            <div class="big-dot"></div>
-            <div class="small-dot"></div>
+            <div
+              class="big-dot"
+              [style.backgroundColor]="'#' + banner?.colorCode"
+            ></div>
+            <div
+              class="small-dot"
+              [style.backgroundColor]="'#' + banner?.colorCode"
+            ></div>
           </div>
           <div class="banner__wrapper--img-inner"></div>
         </div>
-        <div class="banner__wrapper-bottom-bg-circles"></div>
+        <div class="banner__wrapper-bottom-bg-circles">
+          <div class="circle circle-1" [style.borderColor]="'#' + banner?.colorCode"></div>
+          <div class="circle circle-2" [style.borderColor]="'#' + banner?.colorCode"></div>
+          <div class="circle circle-3" [style.borderColor]="'#' + banner?.colorCode"></div>
+          <div class="circle circle-4" [style.borderColor]="'#' + banner?.colorCode"></div>
+        </div>
       </div>
     </div>
     }
   </div>
 
-  <!-- <div class="swiper-pagination"></div> -->
+  <div class="swiper-pagination">
+    <span
+      *ngFor="let banner of banners; let i = index"
+      [style.background]="'#' + banner.colorCode"
+      class="swiper-pagination-bullet"
+    >
+    </span>
+  </div>
   <!-- <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div> -->
 </div>

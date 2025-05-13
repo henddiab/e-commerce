@@ -1,11 +1,31 @@
 .homepage__container-banner {
   width: 100%;
   position: relative;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
 
   .swiper {
     width: 100%;
     position: relative;
+    .swiper-pagination-bullets {
+      bottom: 20px;
+      top: var(--swiper-pagination-top, auto);
+      width: 100%;
+      @media screen and (min-width: 992px) {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
 
+        left: 140px;
+        bottom: 80px;
+      }
+    }
+    .swiper-pagination-bullet {
+      height: 30px;
+      width: 30px;
+      margin-inline-end: 26px;
+    }
     .swiper-slide {
       display: flex;
       justify-content: center;
@@ -52,7 +72,7 @@
       top: unset;
       left: 10%;
       bottom: 4%;
-      opacity: .6;
+      opacity: 0.6;
 
       @media screen and (min-width: 992px) {
         left: 51%;
@@ -86,12 +106,11 @@
     height: 100%;
 
     &-bottom-bg-circles {
-      bottom: 0;
-      right: 10%;
-      background-image: url("/assets/images/banner/circles.svg");
-      background-position: bottom right;
+      bottom: 30px;
+      right: 13%;
       width: pxToRem(192);
       height: pxToRem(190);
+      opacity: 0.4;
       position: absolute;
       display: block;
       background-size: cover;
@@ -102,29 +121,154 @@
         width: pxToRem(313);
         height: pxToRem(309);
       }
+
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .circle-1 {
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        border: 1px solid;
+      }
+
+      .circle-2 {
+        border: 1px solid;
+        width: 155px;
+        height: 155px;
+        top: 19px;
+        left: 19px;
+        @media screen and (mIN-width: 992px) {
+          width: 81%;
+          height: 81%;
+          top: 30px;
+          left: 30px;
+        }
+      }
+
+      .circle-3 {
+        border: 1px solid;
+        border: 1px solid;
+        width: 117px;
+        height: 117px;
+        top: 39px;
+        left: 39px;
+        @media screen and (mIN-width: 992px) {
+          width: 63%;
+          height: 63%;
+          top: 59px;
+          left: 59px;
+        }
+      }
+      .circle-4 {
+        width: 40%;
+        height: 40%;
+        top: 62px;
+        left: 59px;
+        border: 1px solid;
+        border: 1px solid;
+        @media screen and (mIN-width: 992px) {
+          top: 91px;
+          left: 94px;
+        }
+      }
     }
 
     &--details {
       width: 100%;
       padding: 0 1rem 2.5rem;
+      position: relative;
+      .circles {
+        display: none;
+        position: absolute;
+        z-index: -1;
+        top: -1px;
+        left: -1px;
+        opacity: 0.4;
+        width: 19.5625rem;
+        height: 19.3125rem;
+        .circle {
+          position: absolute;
+          border-radius: 50%;
+        }
+
+        .circle-1 {
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          border: 1px solid;
+        }
+
+        .circle-2 {
+          width: 81%;
+          height: 81%;
+          top: 30px;
+          left: 30px;
+          border: 1px solid;
+          @media screen and (max-width: 500px) {
+            width: 155px;
+            height: 155px;
+            top: 19px;
+            left: 19px;
+          }
+        }
+
+        .circle-3 {
+          width: 63%;
+          height: 63%;
+          top: 59px;
+          left: 59px;
+          border: 1px solid;
+          border: 1px solid;
+          @media screen and (max-width: 500px) {
+            width: 117px;
+            height: 117px;
+            top: 39px;
+            left: 39px;
+          }
+        }
+        .circle-4 {
+          width: 40%;
+          height: 40%;
+          top: 91px;
+          left: 94px;
+          border: 1px solid;
+          border: 1px solid;
+          @media screen and (max-width: 500px) {
+            top: 62px;
+            left: 59px;
+          }
+        }
+      }
 
       @media screen and (min-width: 992px) {
-        background-image: url("/assets/images/banner/circles.svg");
-        background-repeat: no-repeat;
-        background-position: 0 0;
         padding: pxToRem(48) pxToRem(8);
         width: 54%;
+        .circles {
+          display: block;
+        }
       }
 
       &-title {
+        h1,
+        h1 span {
+          font-size: pxToRem(40);
+          letter-spacing: -0.5px;
+          font-family: $bold;
+          max-width: 90%;
+          @include trim-text(2); // Trims the text to 2 lines
+
+        }
         @media screen and (min-width: 992px) {
           width: 90%;
 
           h1,
           h1 span {
             font-size: pxToRem(56);
-            letter-spacing: -0.5px;
-            font-family: $bold;
           }
         }
 
@@ -141,6 +285,8 @@
           color: $footer_copyright;
           padding: pxToRem(8) 0 pxToRem(19);
           margin-bottom: 0;
+            @include trim-text(3); // Trims the text to 2 lines
+
         }
 
         @media screen and (min-width: 992px) {
@@ -201,14 +347,14 @@
         .big-dot {
           width: 32px;
           height: 32px;
-          bottom: 0px;
-          left: 36px;
+          bottom: -35px;
+          left: 3px;
         }
 
         .small-dot {
           width: 16px;
           height: 16px;
-          bottom: -62px;
+          bottom: -83px;
           left: -28px;
         }
 
@@ -322,8 +468,6 @@
                 transition: stroke-dashoffset 0.35s;
               }
             }
-
-
           }
 
           .tutors {
@@ -359,5 +503,9 @@
         }
       }
     }
+  }
+
+  @media screen and (min-width:992px) {
+    padding: 0;
   }
 }

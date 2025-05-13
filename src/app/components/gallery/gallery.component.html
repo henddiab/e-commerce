@@ -20,7 +20,7 @@
         >
           <div class="img-container">
             <div class="overlay"></div>
-            <img [src]="slide?.image" class="slide-image" alt="gallery-img"/>
+            <img [src]="slide?.image" class="slide-image" alt="gallery-img" />
             <button
               aria-label="Name"
               aria-labelledby="labeldiv"
@@ -33,37 +33,43 @@
           </div>
         </div>
       </div>
-      <div class="gallery-bar swiper-pagination"></div>
       <div class="swiper-button-prev gallery-prev visible-hidden"></div>
       <div class="swiper-button-next gallery-next visible-hidden"></div>
     </div>
-
-    <div class="nav-buttons">
-      <button
-        (click)="slidePrev()"
-        aria-label="Name"
-        aria-labelledby="labeldiv"
-        aria-label="Aria Name"
-      >
-        <span>&laquo;</span>
-      </button>
-      <button
-        (click)="slideNext()"
-        aria-label="Name"
-        aria-labelledby="labeldiv"
-        aria-label="Aria Name"
-      >
-        <span>&raquo;</span>
-      </button>
-    </div>
-    <!-- <p class="pagination">
-    {{ activeIndex + 1 }}/{{ slides.length }}
-  </p> -->
-    <!-- <div class="custom-pagination">
-          <span class="current-slide">1</span>
-          <span>/</span>
-          <span class="total-slides">5</span>
+    <div class="tools">
+      <div class="nav-buttons">
+        <button
+          class="prev"
+          (click)="slidePrev()"
+          aria-label="Name"
+          aria-labelledby="labeldiv"
+          aria-label="Aria Name"
+        >
+          <span class="pi pi-angle-left"></span>
+        </button>
+        <button
+          class="next"
+          (click)="slideNext()"
+          aria-label="Name"
+          aria-labelledby="labeldiv"
+          aria-label="Aria Name"
+        >
+          <span class="pi pi-angle-right"></span>
+        </button>
       </div>
-  </div> -->
+      <div class="custom-progress-bar">
+    <div
+      class="progress"
+      [style.width.%]="progressPercentage"
+    ></div>
   </div>
+
+      <p class="pagination my-0">{{ activeIndex + 1 }}/{{ slides.length }}</p>
+    </div>
+    <div class="mobile-view-all-btn">
+            <a href="" class="primary-btn"> view all photos</a>
+
+    </div>
+  </div>
+
 </div>
