@@ -36,7 +36,7 @@ export class GalleryComponent implements OnInit {
   /**
    * Index of the currently active slide.
    */
-  activeIndex: any  = 0;
+  activeIndex: any = 0;
 
   /**
    * Percentage of progress for the custom progress bar.
@@ -89,12 +89,6 @@ export class GalleryComponent implements OnInit {
   }
 
   /**
-   * Lifecycle hook that runs after the view is initialized.
-   * Currently unused but reserved for future logic.
-   */
-  ngAfterViewInit() {}
-
-  /**
    * Initializes the Swiper slider with custom configurations.
    * Includes autoplay, navigation, and responsive breakpoints.
    */
@@ -102,20 +96,26 @@ export class GalleryComponent implements OnInit {
     this.gallerySwiper = new Swiper('.gallerySwiper', {
       slidesPerView: 1.3,
       spaceBetween: 20,
-      loop: false,
-      autoplay: {
-        delay: 2000,
-      },
+      loop: true,
+      autoplay: true,
       navigation: {
         nextEl: '.gallery-next',
         prevEl: '.gallery-prev',
       },
       breakpoints: {
         992: {
-          slidesPerView: 3.8,
-          spaceBetween: -300,
+          initialSlide: 2,
+          slidesPerView: 3,
+          spaceBetween: -376,
           centeredSlides: true,
           loop: true,
+          effect: 'coverflow', // Use a coverflow effect
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+          },
         },
       },
       on: {
