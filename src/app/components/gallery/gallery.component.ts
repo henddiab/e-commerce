@@ -66,15 +66,6 @@ export class GalleryComponent implements OnInit {
   }
 
   /**
-   * Handles the slide change event.
-   * Updates the active index when the slide changes.
-   * @param event - The Swiper event containing the real index of the slide.
-   */
-  onSlideChange(event: any) {
-    this.activeIndex = event.realIndex;
-  }
-
-  /**
    * Navigates to the previous slide.
    */
   slidePrev() {
@@ -104,7 +95,6 @@ export class GalleryComponent implements OnInit {
       },
       breakpoints: {
         992: {
-          initialSlide: 2,
           slidesPerView: 3,
           spaceBetween: -376,
           centeredSlides: true,
@@ -120,12 +110,10 @@ export class GalleryComponent implements OnInit {
       },
       on: {
         slideChange: () => {
-          this.activeIndex = this.gallerySwiper?.realIndex;
           this.updateProgress();
         },
       },
     });
-    this.updateProgress();
   }
 
   /**

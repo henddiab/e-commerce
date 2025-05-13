@@ -194,7 +194,8 @@
                 border-bottom-left-radius: 40px;
                 border-top-left-radius: 40px;
               }
-              &:hover {
+              &:hover,
+              &:focus {
                 background-color: $slider-nav;
               }
             }
@@ -226,7 +227,7 @@
       p {
         font-size: 22px;
         color: $grey-200;
-        @include trim-text(3)
+        @include trim-text(3);
       }
       .primary-btn {
         display: none;
