@@ -76,7 +76,10 @@
     span {
       font-family: $semiBold;
       font-weight: $font-weight-semiBold;
-      font-size: pxToRem(24);
+      font-size: 1rem;
+      @media screen and (min-width: 992px) {
+        font-size: pxToRem(24);
+      }
     }
   }
 }

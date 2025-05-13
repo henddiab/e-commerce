@@ -1,6 +1,10 @@
 <div class="course-card">
   <div class="course-card__image">
-    <img loading="lazy"  [src]="course?.image" [alt]="course?.title"/>
+    <img
+      loading="lazy"
+      [src]="course?.image ? course?.image : 'https://placehold.co/270x150'"
+      [alt]="course?.title"
+    />
 
     <div class="course-card__image-overlay">
       @if (course?.discount) {
@@ -21,6 +25,7 @@
     </div>
     <h3
       class="course-card__content-title"
+      [title]="course?.title"
       [routerLink]="['/course-details', course?.id]"
     >
       {{ course?.title }}

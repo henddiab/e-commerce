@@ -50,7 +50,13 @@
               class="banner__wrapper--img main-img"
               [style.backgroundColor]="'#' + banner?.colorCode"
             >
-              <img [src]="banner.image" alt="banner-img" loading="lazy" />
+              <img
+                [src]="
+                  banner.image ? banner.image : 'https://placehold.co/168x200'
+                "
+                alt="banner-img"
+                loading="lazy"
+              />
             </div>
             <div
               class="online-courses"

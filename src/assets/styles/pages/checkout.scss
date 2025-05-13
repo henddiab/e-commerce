@@ -1,5 +1,9 @@
 .checkout {
-  padding: pxToRem(28) pxToRem(37) pxToRem(72) pxToRem(59);
+  padding: pxToRem(28) pxToRem(16) pxToRem(72) pxToRem(16);
+
+  @media screen and (min-width: 992px) {
+    padding: pxToRem(28) pxToRem(37) pxToRem(72) pxToRem(59);
+  }
 
   &__header {
     display: flex;

@@ -20,7 +20,13 @@
         >
           <div class="img-container">
             <div class="overlay"></div>
-            <img [src]="slide?.image" class="slide-image" alt="gallery-img" />
+            <img
+              [src]="
+                slide?.image ? slide?.image : 'https://placehold.co/400x400'
+              "
+              class="slide-image"
+              alt="gallery-img"
+            />
             <button
               aria-label="Name"
               aria-labelledby="labeldiv"
@@ -58,18 +64,15 @@
         </button>
       </div>
       <div class="custom-progress-bar">
-    <div
-      class="progress"
-      [style.width.%]="progressPercentage"
-    ></div>
-  </div>
+        <div class="progress" [style.width.%]="progressPercentage"></div>
+      </div>
 
-      <p class="pagination my-0">{{ activeIndex + 1 }}/{{ slides?.length || 0 }}</p>
+      <p class="pagination my-0">
+        {{ activeIndex + 1 }}/{{ slides?.length || 0 }}
+      </p>
     </div>
     <div class="mobile-view-all-btn">
-            <a href="" class="primary-btn"> view all photos</a>
-
+      <a href="" class="primary-btn"> view all photos</a>
     </div>
   </div>
-
 </div>

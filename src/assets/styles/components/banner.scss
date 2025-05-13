@@ -26,10 +26,13 @@
     .swiper-pagination-bullet {
       height: 15px;
       width: 15px;
-      margin-inline-end: 26px;
+      margin-inline-end: 13px;
       @media screen and (min-width: 992px) {
+        margin-inline-end: 26px;
         top: 30px;
         left: 30px;
+        height: 30px;
+        width: 30px;
       }
     }
     .swiper-slide {
@@ -266,9 +269,7 @@
           }
         }
 
-        // span {
-        //   color: $primary;
-        // }
+
       }
 
       &-brief {
@@ -277,13 +278,14 @@
         p {
           font-size: pxToRem(14);
           color: $footer_copyright;
-          padding: pxToRem(8) 0 pxToRem(19);
-          margin-bottom: 0;
+          margin: pxToRem(8) 0 pxToRem(19);
+          // margin-bottom: 0;
+          @include trim-text(2)
         }
 
         @media screen and (min-width: 992px) {
           p {
-            padding: pxToRem(12) 0 pxToRem(42);
+            margin: pxToRem(12) 0 pxToRem(42);
             font-size: pxToRem(16);
           }
         }
@@ -429,7 +431,7 @@
             width: pxToRem(123);
             height: pxToRem(187);
             right: pxToRem(-56);
-            top: pxToRem(-42);
+            top: pxToRem(-24);
             padding: pxToRem(16) pxToRem(6);
             flex-direction: column;
 
