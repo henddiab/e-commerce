@@ -9,11 +9,13 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 import Swiper from 'swiper';
-import { Pagination, Navigation, Grid } from 'swiper/modules';
 import { GalleryService } from '../../core/services/gallery/gallery.service';
 
-// import 'swiper/css/bundle';
-
+/**
+ * GalleryComponent
+ * Displays a Swiper slider with a gallery of images.
+ * Includes custom navigation, autoplay, and a progress bar.
+ */
 @Component({
   selector: 'app-gallery',
   imports: [CommonModule],
@@ -21,66 +23,114 @@ import { GalleryService } from '../../core/services/gallery/gallery.service';
   styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent implements OnInit {
+  /**
+   * Injects the GalleryService to fetch gallery data.
+   */
   private galleryService = inject(GalleryService);
+
+  /**
+   * Array of slides fetched from the GalleryService.
+   */
   slides = this.galleryService.gallery();
-  activeIndex: any = 0;
+
+  /**
+   * Index of the currently active slide.
+   */
+  activeIndex: any  = 0;
+
+  /**
+   * Percentage of progress for the custom progress bar.
+   */
   progressPercentage: number = 0;
+
+  /**
+   * Instance of the Swiper slider.
+   */
   gallerySwiper: Swiper | undefined;
 
+  /**
+   * Injects the platform ID to ensure browser-specific logic.
+   */
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+  /**
+   * Lifecycle hook that initializes the component.
+   * Ensures the Swiper slider is only initialized in the browser environment.
+   */
   ngOnInit(): void {
-     if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
-      this.initSwiper()
+        this.initSwiper();
       }, 1000);
     }
   }
 
-
+  /**
+   * Handles the slide change event.
+   * Updates the active index when the slide changes.
+   * @param event - The Swiper event containing the real index of the slide.
+   */
   onSlideChange(event: any) {
     this.activeIndex = event.realIndex;
   }
+
+  /**
+   * Navigates to the previous slide.
+   */
   slidePrev() {
     this.gallerySwiper?.slidePrev();
   }
+
+  /**
+   * Navigates to the next slide.
+   */
   slideNext() {
     this.gallerySwiper?.slideNext();
   }
-  ngAfterViewInit() {
 
-  }
+  /**
+   * Lifecycle hook that runs after the view is initialized.
+   * Currently unused but reserved for future logic.
+   */
+  ngAfterViewInit() {}
 
-  initSwiper(){
+  /**
+   * Initializes the Swiper slider with custom configurations.
+   * Includes autoplay, navigation, and responsive breakpoints.
+   */
+  initSwiper() {
     this.gallerySwiper = new Swiper('.gallerySwiper', {
-        slidesPerView: 1.3,
-        spaceBetween: 20,
-        loop: false,
-        autoplay:{
-          delay:2000
+      slidesPerView: 1.3,
+      spaceBetween: 20,
+      loop: false,
+      autoplay: {
+        delay: 2000,
+      },
+      navigation: {
+        nextEl: '.gallery-next',
+        prevEl: '.gallery-prev',
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3.8,
+          spaceBetween: -300,
+          centeredSlides: true,
+          loop: true,
         },
-        navigation: {
-          nextEl: '.gallery-next',
-          prevEl: '.gallery-prev',
+      },
+      on: {
+        slideChange: () => {
+          this.activeIndex = this.gallerySwiper?.realIndex;
+          this.updateProgress();
         },
-        breakpoints: {
-          992: {
-            slidesPerView: 3.8,
-            spaceBetween: -300,
-            centeredSlides: true,
-            loop: true,
-          },
-        },
-        on: {
-          slideChange: () => {
-            this.activeIndex = this.gallerySwiper?.realIndex;
-            this.updateProgress();
-          },
-        },
-      });
-      this.updateProgress();
+      },
+    });
+    this.updateProgress();
   }
 
+  /**
+   * Updates the custom progress bar based on the current slide index.
+   */
   updateProgress() {
     if (this.gallerySwiper) {
       this.activeIndex = this.gallerySwiper.realIndex || 0;
@@ -88,5 +138,4 @@ export class GalleryComponent implements OnInit {
       this.progressPercentage = ((this.activeIndex + 1) / totalSlides) * 100;
     }
   }
-
 }

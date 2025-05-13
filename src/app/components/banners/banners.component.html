@@ -5,16 +5,27 @@
       <div class="banner__wrapper">
         <div class="banner__wrapper--details">
           <div class="circles">
-            <div class="circle circle-1" [style.borderColor]="'#' + banner?.colorCode"></div>
-            <div class="circle circle-2" [style.borderColor]="'#' + banner?.colorCode"></div>
-            <div class="circle circle-3" [style.borderColor]="'#' + banner?.colorCode"></div>
-            <div class="circle circle-4" [style.borderColor]="'#' + banner?.colorCode"></div>
+            <div
+              class="circle circle-1"
+              [style.borderColor]="'#' + banner?.colorCode"
+            ></div>
+            <div
+              class="circle circle-2"
+              [style.borderColor]="'#' + banner?.colorCode"
+            ></div>
+            <div
+              class="circle circle-3"
+              [style.borderColor]="'#' + banner?.colorCode"
+            ></div>
+            <div
+              class="circle circle-4"
+              [style.borderColor]="'#' + banner?.colorCode"
+            ></div>
           </div>
 
           <div
             class="banner__wrapper--details-title"
-            [innerHTML]="getTitle(banner?.title , banner?.colorCode) | safeHtml"
-
+            [innerHTML]="getTitle(banner?.title, banner?.colorCode) | safeHtml"
           ></div>
           <div class="banner__wrapper--details-brief">
             <p>
@@ -109,10 +120,22 @@
           <div class="banner__wrapper--img-inner"></div>
         </div>
         <div class="banner__wrapper-bottom-bg-circles">
-          <div class="circle circle-1" [style.borderColor]="'#' + banner?.colorCode"></div>
-          <div class="circle circle-2" [style.borderColor]="'#' + banner?.colorCode"></div>
-          <div class="circle circle-3" [style.borderColor]="'#' + banner?.colorCode"></div>
-          <div class="circle circle-4" [style.borderColor]="'#' + banner?.colorCode"></div>
+          <div
+            class="circle circle-1"
+            [style.borderColor]="'#' + banner?.colorCode"
+          ></div>
+          <div
+            class="circle circle-2"
+            [style.borderColor]="'#' + banner?.colorCode"
+          ></div>
+          <div
+            class="circle circle-3"
+            [style.borderColor]="'#' + banner?.colorCode"
+          ></div>
+          <div
+            class="circle circle-4"
+            [style.borderColor]="'#' + banner?.colorCode"
+          ></div>
         </div>
       </div>
     </div>
@@ -127,6 +150,4 @@
     >
     </span>
   </div>
-  <!-- <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div> -->
 </div>

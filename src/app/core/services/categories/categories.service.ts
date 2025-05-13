@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { APIURL } from '../http/api';
-import { catchError, map, of } from 'rxjs';
+import { catchError, map, of, take } from 'rxjs';
 import { Category } from '../../../shared/models/category.interface';
 
 @Injectable({
@@ -32,7 +32,8 @@ export class CategoriesService {
           { id: '3', name: 'DevOps' },
           { id: '4', name: 'Cloud Computing' },
         ]);
-      })
+      }),
+      take(1)
     );
   }
 }
