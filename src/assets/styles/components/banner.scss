@@ -1,30 +1,36 @@
 .homepage__container-banner {
   width: 100%;
   position: relative;
-  padding: 2rem;
-  margin-bottom: 2rem;
-
-
   .swiper {
     width: 100%;
     position: relative;
+    .swiper-wrapper {
+      height: 700px;
+      @media screen and (min-width: 992px) {
+        height: 100%;
+      }
+    }
     .swiper-pagination-bullets {
-      bottom: 20px;
+      bottom: 0;
       top: var(--swiper-pagination-top, auto);
       width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
       @media screen and (min-width: 992px) {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        left: 140px;
+        left: 10%;
         bottom: 80px;
+        justify-content: flex-start;
       }
     }
     .swiper-pagination-bullet {
-      height: 30px;
-      width: 30px;
+      height: 15px;
+      width: 15px;
       margin-inline-end: 26px;
+      @media screen and (min-width: 992px) {
+        top: 30px;
+        left: 30px;
+      }
     }
     .swiper-slide {
       display: flex;
@@ -50,19 +56,6 @@
 
       &::after {
         font-size: 0;
-      }
-    }
-
-    &-small-dot {
-      width: 32px;
-      height: 32px;
-      top: unset;
-      left: 22%;
-      bottom: 10%;
-
-      @media screen and (min-width: 992px) {
-        left: 55%;
-        bottom: 27%;
       }
     }
 
@@ -106,8 +99,8 @@
     height: 100%;
 
     &-bottom-bg-circles {
-      bottom: 30px;
-      right: 13%;
+      bottom: 2%;
+      right: 1%;
       width: pxToRem(192);
       height: pxToRem(190);
       opacity: 0.4;
@@ -120,6 +113,8 @@
       @media screen and (min-width: 992px) {
         width: pxToRem(313);
         height: pxToRem(309);
+        bottom: 0;
+        right: 10%;
       }
 
       .circle {
@@ -141,7 +136,7 @@
         height: 155px;
         top: 19px;
         left: 19px;
-        @media screen and (mIN-width: 992px) {
+        @media screen and (min-width: 992px) {
           width: 81%;
           height: 81%;
           top: 30px;
@@ -156,7 +151,7 @@
         height: 117px;
         top: 39px;
         left: 39px;
-        @media screen and (mIN-width: 992px) {
+        @media screen and (min-width: 992px) {
           width: 63%;
           height: 63%;
           top: 59px;
@@ -170,7 +165,7 @@
         left: 59px;
         border: 1px solid;
         border: 1px solid;
-        @media screen and (mIN-width: 992px) {
+        @media screen and (min-width: 992px) {
           top: 91px;
           left: 94px;
         }
@@ -179,7 +174,8 @@
 
     &--details {
       width: 100%;
-      padding: 0 1rem 2.5rem;
+      // padding: 0 1rem 2.5rem;
+      margin-bottom: 1.5rem;
       position: relative;
       .circles {
         display: none;
@@ -247,7 +243,7 @@
 
       @media screen and (min-width: 992px) {
         padding: pxToRem(48) pxToRem(8);
-        width: 54%;
+        width: 53%;
         .circles {
           display: block;
         }
@@ -259,15 +255,13 @@
           font-size: pxToRem(40);
           letter-spacing: -0.5px;
           font-family: $bold;
-          max-width: 90%;
-          @include trim-text(2); // Trims the text to 2 lines
-
+          letter-spacing: -2.5px;
         }
-        @media screen and (min-width: 992px) {
-          width: 90%;
-
+        @media screen and (min-width: 1280px) {
+          line-height: 64px;
           h1,
           h1 span {
+            letter-spacing: -0.5px;
             font-size: pxToRem(56);
           }
         }
@@ -278,15 +272,13 @@
       }
 
       &-brief {
-        width: 65%;
+        // width: 65%;
 
         p {
           font-size: pxToRem(14);
           color: $footer_copyright;
           padding: pxToRem(8) 0 pxToRem(19);
           margin-bottom: 0;
-            @include trim-text(3); // Trims the text to 2 lines
-
         }
 
         @media screen and (min-width: 992px) {
@@ -320,7 +312,7 @@
         justify-content: start;
         height: unset;
         padding-bottom: 0;
-        width: 46%;
+        width: 47%;
       }
 
       &-outer {
@@ -347,15 +339,23 @@
         .big-dot {
           width: 32px;
           height: 32px;
-          bottom: -35px;
-          left: 3px;
+          bottom: -18%;
+          left: 10%;
+          @media screen and (min-width: 992px) {
+            bottom: -5%;
+            left: 10%;
+          }
         }
 
         .small-dot {
           width: 16px;
           height: 16px;
-          bottom: -83px;
-          left: -28px;
+          bottom: -31%;
+          left: -5%;
+          @media screen and (min-width: 992px) {
+            bottom: -16%;
+            left: -5%;
+          }
         }
 
         .main-img {
@@ -364,8 +364,8 @@
           position: absolute;
           width: 100%;
           height: 100%;
-          left: 16px;
-          top: 12px;
+          left: 10px;
+          top: 10px;
           display: flex;
           justify-content: center;
           align-items: flex-end;
@@ -379,6 +379,8 @@
           }
 
           @media screen and (min-width: 992px) {
+            left: 16px;
+            top: 12px;
             img {
               width: pxToRem(273);
               height: pxToRem(318);
@@ -505,7 +507,8 @@
     }
   }
 
-  @media screen and (min-width:992px) {
+  @media screen and (min-width: 992px) {
     padding: 0;
+    margin-bottom: 2rem;
   }
 }

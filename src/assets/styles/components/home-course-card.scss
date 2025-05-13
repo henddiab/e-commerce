@@ -76,6 +76,7 @@
       font-size: pxToRem(18);
       font-weight: $font-weight-semiBold;
       color: $grey-900;
+      @include trim-text(1); // Trims the text to 2 lines
     }
 
     &-author {
@@ -98,6 +99,7 @@
       p {
         @extend %header-regular;
         margin: 8px 0;
+        @include trim-text(1); // Trims the text to 2 lines
       }
     }
   }

@@ -1,12 +1,26 @@
 .homepage__container-gallery {
   width: 100%;
+  @media screen and (min-width: 992px) {
+    position: relative;
+    &::after {
+      position: absolute;
+      width: 235px;
+      height: 235px;
+      border-radius: 50%;
+      right: 0px;
+      bottom: -86.5px;
+      background: $gallery-bg;
+      content: "";
+      z-index: -1;
+    }
+  }
   .gallery__section-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: #e6f7fd;
+    background: $gallery-bg;
     padding: pxToRem(40) pxToRem(20);
 
     @media screen and (min-width: 992px) {
@@ -14,6 +28,7 @@
       flex-direction: row;
     }
 
+    // start gallery slider style
     .gallery__section-slider {
       width: 100%;
       .gallerySwiper {
@@ -25,14 +40,13 @@
         }
       }
 
-
+      // slider tools (pagination & navigation)
       .tools {
-          margin: 2.5rem 0;
-
+        margin: 2.5rem 0;
         .custom-progress-bar {
           position: relative;
           height: 4px;
-          background-color: #e0e0e0;
+          background-color: $slider-progress;
           margin-top: 10px;
           border-radius: 2px;
           width: 100%;
@@ -40,33 +54,30 @@
 
           .progress {
             height: 100%;
-            background-color: #007bff;
+            background-color: $primary;
             transition: width 0.3s ease;
           }
         }
-
-        p.pagination{
+        p.pagination {
           display: none;
         }
-
         .nav-buttons {
           display: none;
-
-
-
         }
       }
 
-      .mobile-view-all-btn{
+      // view all photos button
+      .mobile-view-all-btn {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        a{
+        a {
           width: auto;
         }
-
       }
+
+      // slider in large screens
       @media screen and (min-width: 992px) {
         width: 60%;
         .gallerySwiper {
@@ -92,7 +103,6 @@
             .img-container {
               position: relative;
               border-radius: 20px;
-
             }
             > img,
             > div {
@@ -104,10 +114,7 @@
             opacity: 0.8;
             z-index: 2;
             transform: scale(0.7);
-
           }
-
-
 
           .swiper-slide-active {
             opacity: 1;
@@ -128,7 +135,7 @@
 
           .gallery-prev,
           .gallery-next {
-            color: #00bfff;
+            color: $primary-100;
             top: 50%;
           }
 
@@ -141,68 +148,67 @@
         }
 
         .tools {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .custom-progress-bar {
-          position: relative;
-          height: 1px;
-          background-color: rgba($color: #000000, $alpha: 0.5);
-          margin-top: 10px;
-          border-radius: 2px;
-          width: 78%;
-          overflow: hidden;
-
-          .progress {
-            height: 100%;
-            background-color: #007bff;
-            transition: width 0.3s ease;
-          }
-        }
-
-        p.pagination{
-          display: block;
-        }
-
-        .nav-buttons {
           display: flex;
-          justify-content: start;
-          margin-top: 10px;
+          align-items: center;
+          justify-content: space-between;
 
-          button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            width: 34px;
-            height: 20px;
+          .custom-progress-bar {
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            border-radius: 2px;
+            width: 80%;
+            .progress {
+              height: 100%;
+              background-color: $primary;
+              transition: width 0.3s ease;
+            }
+          }
+
+          p.pagination {
+            display: block;
+          }
+
+          .nav-buttons {
             display: flex;
-            margin: 0;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            &.next {
-              border-bottom-right-radius: 40px;
-              border-top-right-radius: 40px;
-            }
-            &.prev {
-              border-bottom-left-radius: 40px;
-              border-top-left-radius: 40px;
-            }
-            &:hover {
-              background-color: #0056b3;
+            justify-content: start;
+            margin-top: 10px;
+
+            button {
+              background-color: $primary;
+              color: $white;
+              border: none;
+              width: 34px;
+              height: 27px;
+              display: flex;
+              margin: 0;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+              &.next {
+                border-bottom-right-radius: 40px;
+                border-top-right-radius: 40px;
+              }
+              &.prev {
+                border-bottom-left-radius: 40px;
+                border-top-left-radius: 40px;
+              }
+              &:hover {
+                background-color: $slider-nav;
+              }
             }
           }
         }
-      }
 
-      .mobile-view-all-btn{
-        display: none;
-      }
-
+        .mobile-view-all-btn {
+          display: none;
+        }
       }
     }
+    // end gallery slider style
+
+    // start gallery details style
     .gallery__section-details {
       width: 100%;
       margin-bottom: 2rem;
@@ -210,6 +216,7 @@
         font-size: pxToRem(40);
         font-family: $semiBold;
         font-weight: $font-weight-semiBold;
+        line-height: 64px;
         span {
           font-size: pxToRem(40);
 
@@ -241,7 +248,7 @@
         p {
           font-size: pxToRem(22);
           color: $grey-200;
-          padding-bottom: pxToRem(40);
+          margin-bottom: pxToRem(40);
         }
         .primary-btn {
           font-size: pxToRem(18);
@@ -250,20 +257,6 @@
         }
       }
     }
-  }
-
-  @media screen and (min-width:992px) {
-    position: relative;
-    &::after{
-          position: absolute;
-    width: 235px;
-    height: 235px;
-    border-radius: 50%;
-    right: 0px;
-    bottom: -86.5px;
-    background: #e6f7fd;
-    content: "";
-    z-index: -1;
-    }
+    // end gallery details style
   }
 }
