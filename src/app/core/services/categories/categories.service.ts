@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { APIURL } from '../http/api';
-import { catchError, map, of, take } from 'rxjs';
+import { catchError, map, of, shareReplay, take } from 'rxjs';
 import { Category } from '../../../shared/models/category.interface';
 
 @Injectable({
@@ -21,10 +21,11 @@ export class CategoriesService {
    *
    * @returns An observable that emits the list of categories.
    */
-  categories() {
-    return this.http.get<{ Categories: Category[] }>(APIURL.Categories).pipe(
+  private categories$ = this.http
+    .get<{ Categories: Category[] }>(APIURL.Categories)
+    .pipe(
       map((res) => res.Categories),
-      catchError((error) => {
+      catchError(() => {
         return of([
           { id: '0', name: 'All' },
           { id: '1', name: 'Development' },
@@ -33,7 +34,13 @@ export class CategoriesService {
           { id: '4', name: 'Cloud Computing' },
         ]);
       }),
-      take(1)
+      shareReplay(1) // Share the result and cache the latest value
     );
+
+  /**
+   * Returns the shared observable for categories.
+   */
+  categories() {
+    return this.categories$;
   }
 }
