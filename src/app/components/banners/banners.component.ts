@@ -10,7 +10,7 @@ import {
 } from 'swiper/modules';
 import { BannersService } from '../../core/services/banners/banners.service';
 import { banners } from '../../shared/models/banners.interface';
-import { SafeHtmlPipe } from '../../shared/pipes/SafeHtml.pipe';
+import { SafeHtmlPipe } from '../../core/pipes/SafeHtml.pipe';
 
 Swiper.use([Autoplay, Navigation, EffectCoverflow]);
 

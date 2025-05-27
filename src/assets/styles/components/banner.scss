@@ -187,8 +187,8 @@
         top: -1px;
         left: -1px;
         opacity: 0.4;
-        width: 19.5625rem;
-        height: 19.3125rem;
+        width: pxToRem(312);
+        height: pxToRem(312);
         .circle {
           position: absolute;
           border-radius: 50%;
@@ -268,8 +268,6 @@
             font-size: pxToRem(56);
           }
         }
-
-
       }
 
       &-brief {
@@ -280,7 +278,7 @@
           color: $footer_copyright;
           margin: pxToRem(8) 0 pxToRem(19);
           // margin-bottom: 0;
-          @include trim-text(2)
+          @include trim-text(2);
         }
 
         @media screen and (min-width: 992px) {
