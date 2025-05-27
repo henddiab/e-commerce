@@ -88,7 +88,6 @@ export class GalleryComponent implements OnInit {
       slidesPerView: 1.3,
       spaceBetween: 20,
       loop: true,
-      autoplay: true,
       navigation: {
         nextEl: '.gallery-next',
         prevEl: '.gallery-prev',

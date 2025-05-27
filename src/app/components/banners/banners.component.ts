@@ -1,10 +1,18 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, inject, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import Swiper from 'swiper';
-import { Pagination, Navigation, Grid } from 'swiper/modules';
+import {
+  Pagination,
+  Navigation,
+  Grid,
+  Autoplay,
+  EffectCoverflow,
+} from 'swiper/modules';
 import { BannersService } from '../../core/services/banners/banners.service';
 import { banners } from '../../shared/models/banners.interface';
 import { SafeHtmlPipe } from '../../shared/pipes/SafeHtml.pipe';
+
+Swiper.use([Autoplay, Navigation, EffectCoverflow]);
 
 /**
  * BannersComponent
@@ -58,8 +66,9 @@ export class BannersComponent implements OnInit {
         centeredSlidesBounds: true,
         watchSlidesProgress: true,
         autoplay: {
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         },
         pagination: {
           el: '.swiper-pagination',
